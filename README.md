@@ -1,19 +1,18 @@
 # README
-## Usersテーブル
+## usersテーブル
 |Column|Type|Option|
 |------|----|------|
 |nick_name|string|null: false|
 |email|string|null: false, unique: true|
 |password|string|null: false|
 ### Association
-- has_many :Products
-- has_many :Comments
-- has_one :Names, dependent: :destroy
-- has_one :Address, dependent: :destroy
-### Association
+- has_many :products
+- has_many :comments
+- has_one :names, dependent: :destroy
+- has_one :address, dependent: :destroy
 
 
-## Namesテーブル
+## namesテーブル
 |Column|Type|Option|
 |------|----|------|
 |family_name|string|null: false|
@@ -22,9 +21,9 @@
 |first_name_f|string|null: false|
 |birthday|integer|null: false|
 ### Association
-- belongs_to :User
+- belongs_to :user
 
-## Addresssテーブル
+## addresssテーブル
 |Column|Type|Option|
 |------|----|------|
 |postNo|integer|null: false|
@@ -38,18 +37,18 @@
 |first_Name_f|string|null: false|
 |phone|integer||
 ### Association
-- belongs_to :User
+- belongs_to :user
 
-## Categorysテーブル
+## categorysテーブル
 |Column|Type|Option|
 |------|----|------|
 |name|string|null: false|
 |ancestry|string||
 ### Association
-- has_many :Products
+- has_many :products
 
 
-## Productsテーブル
+## productsテーブル
 |Column|Type|Option|
 |------|----|------|
 |name|string|null: false|
@@ -63,21 +62,21 @@
 |user|reference|null: false, foreign_key:true|
 |category|reference|null: false, foreign_key:true|
 ### Association
-- has_many :Comments
+- has_many :comments
 - has_many :images
-- belongs_to :User
-- belongs_to :Category
+- belongs_to :user
+- belongs_to :category
 
 
-## Commentsテーブル
+## commentsテーブル
 |Column|Type|Option|
 |------|----|------|
 |comment|text|null: false|
 |user|reference|null: false, foreign_key:true|
 |product|reference|null: false, foreign_key:true|
 ### Association
-- belongs_to :Product
-- belongs_to :User
+- belongs_to :product
+- belongs_to :user
 
 
 ## imagesテーブル
@@ -86,5 +85,5 @@
 |image|integer|null: false|
 |product|reference|null: false, foreign_key:true|
 ### Association
-- belongs_to :Product
+- belongs_to :product
 
