@@ -8,6 +8,8 @@
 ### Association
 - has_many :Products
 - has_many :Comments
+
+
 ## Creditsテーブル
 |Column|Type|Option|
 |------|----|------|
@@ -15,7 +17,6 @@
 |name|string|null: false|
 |expiration_date|string|null: false|
 |security_num|integer|null: false|
-### Association
 
 
 ## Namesテーブル
@@ -26,7 +27,6 @@
 |family_name_f|string|null: false|
 |first_name_f|string|null: false|
 |birthday|integer|null: false|
-### Association
 
 
 ## Addresssテーブル
@@ -42,7 +42,6 @@
 |family_Name_f|string|null: false|
 |first_Name_f|string|null: false|
 |phone|integer||
-### Association
 
 
 ## Categorysテーブル
@@ -74,6 +73,7 @@
 - has_many :images
 - belongs_to :User
 
+
 ## Commentsテーブル
 |Column|Type|Option|
 |------|----|------|
@@ -82,12 +82,14 @@
 - belongs_to :Product
 - belongs_to :User
 
+
 ## imagesテーブル
 |Column|Type|Option|
 |------|----|------|
 |image|integer|null: false|
 ### Association
 - belongs_to :Product
+
 
 ## Category_Productsテーブル
 |Column|Type|Option|
