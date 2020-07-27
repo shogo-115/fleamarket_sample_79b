@@ -17,7 +17,7 @@
       -if user_signed_in?
         %ul.rightList
           %li.rightList__item--mypage
-            = link_to "マイページ", "#"
+            = link_to "マイページ", "/users/#{current_user.id}"
       -else
         %ul.rightList
           %li.rightList__item--login
