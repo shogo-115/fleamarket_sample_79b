@@ -1,0 +1,64 @@
+<h2>住所情報登録!!!</h2>
+
+
+<%= form_for @address do |f| %>
+  <%= render "devise/shared/error_messages", resource: @address %>
+  <h3>住所</h3>
+  <div class="field">
+    <%= f.label :郵便番号 %><br />
+    <%= f.text_field :postNo, autofocus: true, autocomplete: "postNo" %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :都道府県 %><br />
+    <%= f.text_field :pref %>
+  </div>
+
+  <div class="field">
+    <%= f.label :市区町村 %><br />
+    <%= f.text_field :city %>
+  </div>
+
+<div class="field">
+    <%= f.label :町丁目・番地 %><br />
+    <%= f.text_field :block %>
+  </div>
+
+<div class="field">
+    <%= f.label :建物名 %><br />
+    <%= f.text_field :building %>
+  </div>
+
+<h3>送付先宛名</h3>
+<div class="field">
+    <%= f.label :姓 %><br />
+    <%= f.text_field :family_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :名 %><br />
+    <%= f.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :姓（フリガナ） %><br />
+    <%= f.text_field :family_name_f %>
+  </div>
+
+  <div class="field">
+    <%= f.label :名（フリガナ） %><br />
+    <%= f.text_field :first_name_f %>
+  </div>
+
+  <div class="field">
+    <%= f.label :電話番号 %><br />
+    <%= f.text_field :phon %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
