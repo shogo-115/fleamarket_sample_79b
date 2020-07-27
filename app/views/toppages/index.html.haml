@@ -14,11 +14,18 @@
           = link_to "カテゴリー", "#"
         %li.leftList__item
           = link_to "ブランド", "#"
-      %ul.rightList
-        %li.rightList__item--login
-          = link_to "ログイン", "#"
-        %li.rightList__item--new
-          = link_to "新規会員登録", "#"
+      -if user_signed_in?
+        %ul.rightList
+          %li.rightList__item--mypage
+            = link_to "マイページ", "#"
+      -else
+        %ul.rightList
+          %li.rightList__item--login
+            = link_to new_user_session_path do
+              ログイン
+          %li.rightList__item--new
+            = link_to new_user_registration_path do
+              新規会員登録
 .topMain
   .mainVisual
     .content
