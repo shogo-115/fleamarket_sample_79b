@@ -9,5 +9,7 @@ Rails.application.routes.draw do
     post 'names', to: 'users/registrations#create_names'
   end
   root 'toppages#index'
+  resources :users, only: :show
+  get 'after_logout', to: 'users#logout'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

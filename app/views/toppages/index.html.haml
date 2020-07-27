@@ -1,31 +1,5 @@
-.topHeader
-  .contents
-    .contents__main
-      %h1.icon
-        = image_tag 'logo.png', alt: 'noImage'
-      .searchField
-        %input{type: "text", class: "searchField__text", placeholder: "キーワードから探す"}
-        %button{type: "submit"}
-          .searchField__icon
-            = image_tag 'icon-search 1.png'
-    .contents__nav
-      %ul.leftList
-        %li.leftList__item--first
-          = link_to "カテゴリー", "#"
-        %li.leftList__item
-          = link_to "ブランド", "#"
-      -if user_signed_in?
-        %ul.rightList
-          %li.rightList__item--mypage
-            = link_to "マイページ", "#"
-      -else
-        %ul.rightList
-          %li.rightList__item--login
-            = link_to new_user_session_path do
-              ログイン
-          %li.rightList__item--new
-            = link_to new_user_registration_path do
-              新規会員登録
+= render partial: "layouts/header"
+
 .topMain
   .mainVisual
     .content
@@ -264,43 +238,10 @@
     .inner__icon
       = link_to image_tag('app-store.svg', class:"apple"), "#"
       = link_to image_tag('google-play.svg', class:"google"), "#"
-.topFooter
-  %ul.contents
-    %li.content
-      %h2.content__title
-        FURIMAについて
-      %ul.box
-        %li.box__list
-          = link_to "会社概要(運営会社)","#"
-        %li.box__list
-          = link_to "プライバシーポリシー","#"
-        %li.box__list
-          = link_to "FURIMA利用規約","#"
-        %li.box__list
-          = link_to "ポイントに関する特約","#"
-    %li.content
-      %h2.content__title
-        FURIMAを見る
-      %ul.box
-        %li.box__list
-          = link_to "カテゴリー一覧","#"
-        %li.box__list
-          = link_to "ブランド一覧","#"
-    %li.content
-      %h2.content__title
-        ヘルプ＆ガイド
-      %ul.box
-        %li.box__list
-          = link_to "FURIMAガイド","#"
-        %li.box__list
-          = link_to "FURIMAロゴ利用ガイドライン","#"
-        %li.box__list
-          = link_to "お知らせ","#"
-  .topFooter__logo
-    = link_to image_tag('logo-white.png'), "#"
-    %p
-      © FURIMA
+
 = link_to "#" do
   .purchaseBtn
     %span.purchaseBtn__text 出品する
     = image_tag 'icon_camera.png', class:"purchaseBtn__icon" 
+
+= render partial: "layouts/footer"
