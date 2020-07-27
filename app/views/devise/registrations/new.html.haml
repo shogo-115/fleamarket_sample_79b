@@ -1,0 +1,22 @@
+%h2 Sign up
+= form_for(@user, url: user_registration_path) do |f|
+  = render "devise/shared/error_messages", resource: @user
+  .field
+    = f.label :メールアドレス
+    %br/
+    = f.email_field :email, autofocus: true, autocomplete: "email"
+  .field
+    = f.label :ニックネーム
+    %br/
+    = f.text_field :nick_name
+  .field
+    = f.label :パスワード（7文字以上）
+    %br/
+    = f.password_field :password, autocomplete: "new-password"
+  .field
+    = f.label :パスワード確認
+    %br/
+    = f.password_field :password_confirmation, autocomplete: "new-password"
+  .actions
+    = f.submit "Next page"
+= render "devise/shared/links"

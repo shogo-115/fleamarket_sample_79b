@@ -1,0 +1,26 @@
+%h2 名前登録
+= form_for @name do |f|
+  = render "devise/shared/error_messages", resource: @name
+  .field
+    = f.label :姓（半角不可）
+    %br/
+    = f.text_field :family_name
+  .field
+    = f.label :名（半角不可）
+    %br/
+    = f.text_field :first_name
+  .field
+    = f.label :姓フリガナ（カタカナ）
+    %br/
+    = f.text_field :family_name_f
+  .field
+    = f.label :名フリガナ（カタカナ）
+    %br/
+    = f.text_field :first_name_f
+  .field
+    = f.label :誕生日
+    %br/
+    = f.text_field :birthday
+  .actions
+    = f.submit "Next　Page"
+= render "devise/shared/links"

@@ -1,0 +1,48 @@
+%h2 住所情報登録!!!
+= form_for @address do |f|
+  = render "devise/shared/error_messages", resource: @address
+  %h3 住所
+  .field
+    = f.label :郵便番号
+    %br/
+    = f.text_field :postNo, autofocus: true, autocomplete: "postNo"
+  .field
+    = f.label :都道府県
+    %br/
+    = f.text_field :pref
+  .field
+    = f.label :市区町村
+    %br/
+    = f.text_field :city
+  .field
+    = f.label :町丁目・番地
+    %br/
+    = f.text_field :block
+  .field
+    = f.label :建物名
+    %br/
+    = f.text_field :building
+  %h3 送付先宛名
+  .field
+    = f.label :姓
+    %br/
+    = f.text_field :family_name
+  .field
+    = f.label :名
+    %br/
+    = f.text_field :first_name
+  .field
+    = f.label :姓（フリガナ）
+    %br/
+    = f.text_field :family_name_f
+  .field
+    = f.label :名（フリガナ）
+    %br/
+    = f.text_field :first_name_f
+  .field
+    = f.label :電話番号
+    %br/
+    = f.text_field :phon
+  .actions
+    = f.submit "Sign up"
+= render "devise/shared/links"
