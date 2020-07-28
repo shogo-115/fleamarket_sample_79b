@@ -1,22 +1,41 @@
-%h2 Sign up
-= form_for(@user, url: user_registration_path) do |f|
-  = render "devise/shared/error_messages", resource: @user
-  .field
-    = f.label :メールアドレス
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :ニックネーム
-    %br/
-    = f.text_field :nick_name
-  .field
-    = f.label :パスワード（7文字以上）
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :パスワード確認
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Next page"
-= render "devise/shared/links"
+.userMain
+  .userHeader
+    .icon
+      = link_to image_tag('logo.png'), "/"
+  .userContents
+    = form_for(@user, url: user_registration_path) do |f|
+      = render "devise/shared/error_messages", resource: @user
+      .userContents__fild
+        メールアドレス (半角英数字)
+        %span 必須
+        .inputarea
+          = f.email_field :email, autofocus: true, autocomplete: "email"
+      .userContents__fild
+        ニックネーム 
+        %span 必須
+        .inputarea
+          = f.text_field :nick_name
+      .userContents__fild
+        パスワード（7文字以上,半角英数字)
+        %span 必須
+        .inputarea
+          = f.password_field :password, autocomplete: "new-password"
+      .userContents__fild
+        パスワード確認
+        %span 必須
+        .inputarea
+          = f.password_field :password_confirmation, autocomplete: "new-password"
+      .userContents__action
+        = f.submit "次へ", class: 'userButton'
+  .userFooter
+    %ul.box
+      %li.box__privacy
+        = link_to "プライバシーポリシー", "#"
+      %li.box__terms
+        = link_to "フリマ利用規約", "#"
+      %li.box__transaction
+        = link_to "特定商取引に関する表記", "#"
+    .icon
+      = link_to image_tag('logo.png'), "/"
+    .copyRight
+      © FURIMA, Inc.
