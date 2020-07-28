@@ -1,26 +1,39 @@
-%h2 名前登録
-= form_for @name do |f|
-  = render "devise/shared/error_messages", resource: @name
-  .field
-    = f.label :姓（半角不可）
-    %br/
-    = f.text_field :family_name
-  .field
-    = f.label :名（半角不可）
-    %br/
-    = f.text_field :first_name
-  .field
-    = f.label :姓フリガナ（カタカナ）
-    %br/
-    = f.text_field :family_name_f
-  .field
-    = f.label :名フリガナ（カタカナ）
-    %br/
-    = f.text_field :first_name_f
-  .field
-    = f.label :誕生日
-    %br/
-    = f.text_field :birthday
-  .actions
-    = f.submit "Next　Page"
-= render "devise/shared/links"
+.userMain
+  .userHeader
+    .icon
+      = link_to image_tag('logo.png'), "/"
+  .userContents
+    = form_for @name do |f|
+      = render "devise/shared/error_messages", resource: @user
+      .userContents__name
+        姓 名（半角不可）
+        %span 必須
+        .inputarea
+          %br/
+          = f.text_field :family_name, placeholder: "姓"
+          = f.text_field :first_name,placeholder: "名"
+      .userContents__name
+        姓 名 フリガナ（カタカナ)
+        %span 必須
+        .inputarea
+          = f.text_field :family_name_f,placeholder: "フリマ"
+          = f.text_field :first_name_f,placeholder: "タロウ"
+      .userContents__fild
+        誕生日
+        %span 必須
+        .inputarea
+          = f.text_field :birthday
+      .userContents__action
+        = f.submit "次へ", class: 'userButton'
+  .userFooter
+    %ul.box
+      %li.box__privacy
+        = link_to "プライバシーポリシー", "#"
+      %li.box__terms
+        = link_to "フリマ利用規約", "#"
+      %li.box__transaction
+        = link_to "特定商取引に関する表記", "#"
+    .icon
+      = link_to image_tag('logo.png'), "/"
+    .copyRight
+      © FURIMA, Inc.

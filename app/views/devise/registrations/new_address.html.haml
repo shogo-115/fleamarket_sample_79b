@@ -1,48 +1,54 @@
-%h2 住所情報登録!!!
-= form_for @address do |f|
-  = render "devise/shared/error_messages", resource: @address
-  %h3 住所
-  .field
-    = f.label :郵便番号
-    %br/
-    = f.text_field :postNo, autofocus: true, autocomplete: "postNo"
-  .field
-    = f.label :都道府県
-    %br/
-    = f.text_field :pref
-  .field
-    = f.label :市区町村
-    %br/
-    = f.text_field :city
-  .field
-    = f.label :町丁目・番地
-    %br/
-    = f.text_field :block
-  .field
-    = f.label :建物名
-    %br/
-    = f.text_field :building
-  %h3 送付先宛名
-  .field
-    = f.label :姓
-    %br/
-    = f.text_field :family_name
-  .field
-    = f.label :名
-    %br/
-    = f.text_field :first_name
-  .field
-    = f.label :姓（フリガナ）
-    %br/
-    = f.text_field :family_name_f
-  .field
-    = f.label :名（フリガナ）
-    %br/
-    = f.text_field :first_name_f
-  .field
-    = f.label :電話番号
-    %br/
-    = f.text_field :phon
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+.userMain
+  .userHeader
+    .icon
+      = link_to image_tag('logo.png'), "/"
+  .userContents
+    = form_for @address do |f|
+      = render "devise/shared/error_messages", resource: @user
+      .userContents__fild
+        郵便番号
+        %span 必須
+        .inputarea
+          %br/
+          = f.text_field :postNo, autofocus: true, autocomplete: "postNo"
+      .userContents__address
+        住所
+        %span 必須
+        .inputarea
+          = f.text_field :pref,placeholder: "都道府県",class: "addressInput"
+          = f.text_field :city,placeholder: "市区町村",class: "addresscity"
+          = f.text_field :block,placeholder: "町丁目・番地",class: "addresscity"
+          %br/
+          = f.text_field :building,placeholder: "建物名(任意）",class: "address_building"
+      .userContents__name
+        宛先名　姓 名（半角不可）
+        %span 必須
+        .inputarea
+          %br/
+          = f.text_field :family_name, placeholder: "姓"
+          = f.text_field :first_name,placeholder: "名"
+      .userContents__name
+        宛先名 姓 名 フリガナ(カタカナ)
+        %span 必須
+        .inputarea
+          = f.text_field :family_name_f,placeholder: "フリマ"
+          = f.text_field :first_name_f,placeholder: "タロウ"
+      .userContents__fild
+        電話番号
+        %span 必須
+        .inputarea
+          = f.text_field :phon
+      .userContents__action
+        = f.submit "登録", class: 'userButton'
+  .userFooter
+    %ul.box
+      %li.box__privacy
+        = link_to "プライバシーポリシー", "#"
+      %li.box__terms
+        = link_to "フリマ利用規約", "#"
+      %li.box__transaction
+        = link_to "特定商取引に関する表記", "#"
+    .icon
+      = link_to image_tag('logo.png'), "/"
+    .copyRight
+      © FURIMA, Inc.
