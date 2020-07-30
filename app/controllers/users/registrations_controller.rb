@@ -47,7 +47,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def update_names
-    name = Name.find(current_user.id)
+    name = Name.find_by(user_id: current_user.id)
     name.update(name_params)
     render "toppages/index"
   end
@@ -72,7 +72,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def update_address
-    address = Address.find(current_user.id)
+    address = Address.find_by(user_id: current_user.id)
     address.update(address_params)
     render "toppages/index"
   end
