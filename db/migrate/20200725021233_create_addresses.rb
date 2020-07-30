@@ -10,7 +10,7 @@ class CreateAddresses < ActiveRecord::Migration[6.0]
       t.string :first_name, null: false
       t.string :family_name_f, null: false
       t.string :first_name_f, null: false
-      t.integer :phon
+      t.string :phon
       t.references :user, null:false, foregin_key:true
       t.timestamps
     end

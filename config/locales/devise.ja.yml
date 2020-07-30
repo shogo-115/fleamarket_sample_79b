@@ -25,8 +25,28 @@ ja:
         unconfirmed_email: 未確認Eメール
         unlock_token: ロック解除用トークン
         updated_at: 更新日
+      name:
+        family_name: "姓"
+        first_name: "名"
+        family_name_f: "姓 フリガナ"
+        first_name_f: "名 フリガナ" 
+        birthday: "誕生日"
+      address:
+        postNo: "郵便番号"
+        pref: "都道府県"
+        city: "市区町村"
+        block: "町丁目・番地"
+        family_name: "姓"
+        first_name: "名"
+        family_name_f: "姓 フリガナ"
+        first_name_f: "名 フリガナ"
+        phon: "電話番号"
+
+
     models:
-      user: ユーザ
+      user: "ユーザ"
+      name: "本人情報"
+      address: "住所登録情報"
   devise:
     confirmations:
       confirmed: メールアドレスが確認できました。
