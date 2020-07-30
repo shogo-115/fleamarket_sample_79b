@@ -20,6 +20,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
     render :new_names
   end
 
+  def edit
+  end
+
+  def update
+    user = User.find(current_user.id)
+    user.update(user_params)
+    render "toppages/index"
+  end
+
   def create_names
     @user = User.new(session["devise.regist_data"]["user"])
     @name = Name.new(name_params)
@@ -31,6 +40,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
     session["name"] = @name.attributes
     @address = @user.build_address
     render :new_address
+  end
+
+  def edit_names
+    @name = Name.find_by(user_id: current_user.id)
+  end
+
+  def update_names
+    name = Name.find(current_user.id)
+    name.update(name_params)
+    render "toppages/index"
   end
 
   def create_address
@@ -48,7 +67,21 @@ class Users::RegistrationsController < Devise::RegistrationsController
     render "toppages/index"
   end
 
+  def edit_address
+    @address = Address.find_by(user_id: current_user.id)
+  end
+
+  def update_address
+    address = Address.find(current_user.id)
+    address.update(address_params)
+    render "toppages/index"
+  end
+
   protected
+
+  def user_params
+    params.require(:user).permit(:email, :nick_name)
+  end
 
   def address_params
     params.require(:address).permit(:postNo, :pref, :city, :block, :building, :family_name, :first_name, :family_name_f, :first_name_f, :phon )
