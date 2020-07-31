@@ -3,7 +3,7 @@
     .icon
       = link_to image_tag('logo.png'), "/"
   .userContents
-    = form_for @address do |f|
+    = form_with(model: @address, url: update_address_path ,local:true) do |f|
       = render "devise/shared/error_messages", resource: @address
       .userContents__fild
         郵便番号
@@ -21,7 +21,7 @@
           %br/
           = f.text_field :building,placeholder: "建物名(任意）",class: "address_building"
       .userContents__name
-        宛先名 姓 名（半角不可）
+        宛先名　姓 名（半角不可）
         %span 必須
         .inputarea
           %br/
@@ -39,7 +39,7 @@
         .inputarea
           = f.text_field :phon
       .userContents__action
-        = f.submit "登録", class: 'userButton'
+        = f.submit "更新", class: 'userButton'
   .userFooter
     %ul.box
       %li.box__privacy
@@ -52,3 +52,5 @@
       = link_to image_tag('logo.png'), "/"
     .copyRight
       © FURIMA, Inc.
+
+      

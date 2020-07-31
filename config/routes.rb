@@ -7,10 +7,15 @@ Rails.application.routes.draw do
     post 'addresses', to: 'users/registrations#create_address'
     get 'names', to: 'users/registrations#new_names'
     post 'names', to: 'users/registrations#create_names'
+    get 'edit_names', to: 'users/registrations#edit_names'
+    patch 'update_names', to: 'users/registrations#update_names'
+    get 'edit_address', to: 'users/registrations#edit_address'
+    patch 'update_address', to: 'users/registrations#update_address'
   end
   root 'products#index'
   resources :products, expect: :show
+  resources :buys, only: :new
   resources :users, only: :show
   get 'after_logout', to: 'users#logout'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  delete 'user_delete', to: 'users#delete'
 end
