@@ -18,11 +18,11 @@
         .inputarea
           = form.text_field :family_name_f,placeholder: "フリマ"
           = form.text_field :first_name_f,placeholder: "タロウ"
-      .userContents__name
+      .userContents__fild
         誕生日
         %span 必須
         .inputarea
-          = form.date_select :birthday, use_month_numbers: true,  start_year: 1930, end_year: (Time.now.year - 18), default: Date.new(1989, 1, 1)
+          = form.text_field :birthday
       .userContents__action
         = form.submit "更新", class: 'userButton'
   .userFooter

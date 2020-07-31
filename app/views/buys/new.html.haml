@@ -1,0 +1,44 @@
+.userMain
+  = render partial: "layouts/userheader"
+  .buyContents
+    .buyContents__fildTitle
+      購入内容の確認
+    .buyContents__fildProduct
+      .buyContents__fildProduct__area
+        .buyContents__fildProduct__area--image
+          = image_tag 'sss.jpg', class: "image"
+        .buyContents__fildProduct__area--price
+          商品名称
+    .buyContents__fildc
+      .buyContents__fildc--a
+        %span 支払い金額  
+        %span ¥15,000
+    .buyContents__fildd
+      .buyContents__fildd--c
+        %h3 支払い方法
+        %p クレジットカード
+      = link_to "#" do
+        ＋ クレジットカードの登録内容の確認
+    .buyContents__filde
+      .buyContents__filde--d
+        %h3 配送先
+        %br
+        郵便番号:
+        = @address.postNo
+        %br
+        住所:
+        = @address.pref
+        = @address.city
+        = @address.block
+        = @address.building
+        %br
+        宛名:
+        = @address.family_name
+        = @address.first_name
+      = link_to "#" do
+        ＋ 配送先を変更する
+    .buyContents__fildf
+      .buyContents__fildf--e
+        = form_with url:"#" do |form|
+          = form.submit value: "購入する", class: "btn2"
+  = render partial: "layouts/userfooter"
