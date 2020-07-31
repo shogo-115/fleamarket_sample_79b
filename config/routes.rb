@@ -12,8 +12,9 @@ Rails.application.routes.draw do
     get 'edit_address', to: 'users/registrations#edit_address'
     patch 'update_address', to: 'users/registrations#update_address'
   end
+  root 'products#index'
+  resources :products, expect: :show
   resources :buys, only: :new
-  root 'toppages#index'
   resources :users, only: :show
   get 'after_logout', to: 'users#logout'
   delete 'user_delete', to: 'users#delete'

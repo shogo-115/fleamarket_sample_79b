@@ -1,0 +1,441 @@
+.sellHeader{
+  background-color: rgb(245, 245, 245);
+  .icon{
+    text-align: center;
+    padding: 30px 0;
+    img{
+      width: 140px;
+      height: 40.55px;
+      vertical-align: bottom;
+    }
+  }
+  .sellMain{
+    width: 100vw;
+    height: 100%;
+    .sellContents{
+      width: 700px;
+      height: 100%;
+      background-color: white;
+      margin: 0 auto;
+      &__image{
+        width: 100%;
+        padding: 30px;
+        border-bottom: lightgray solid 1px;
+        &__h{
+          font-weight: bold;
+          span{
+            font-size: 13px;
+            font-weight: normal;
+            color: white;
+            background-color: red;
+            border-radius: 5px;
+            padding: 3px;
+          }
+          .formImage__text{
+            font-size: 13px;
+            margin-top: 3px;
+          }
+        }
+        .imageBox{
+          width: 100%;
+          #previews{
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            .imagePreview__wrapper{
+              width: 125px;
+              height: 125px;
+              .preview{
+                width: 125px;
+                height: 125px;
+              }
+            }
+            .imagePreviewBtn{
+              width: 125px;
+              color: skyblue;
+              display: flex;
+              justify-content: space-around;
+              &_edit{
+                &:hover{
+                }
+              }
+              &_delete{
+                &:hover{
+                }
+              }
+            }
+            .input{
+              display: flex;
+              flex-wrap: wrap;
+              width: 100%;
+              .uploadLabel{
+                width: 100%;
+                height: 120px;
+                background-color: rgb(245, 245, 245);
+                display: flex;
+                align-items: center;
+                .uploadLabel__text{
+                  text-align: center;
+                  width: 100%;
+                  .inputArea{
+                    display: none;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      &__name{
+        font-weight: bold;
+        padding: 30px;
+        border-bottom: lightgray solid 1px;
+        span{
+          font-size: 13px;
+          font-weight: normal;
+          color: white;
+          background-color: red;
+          border-radius: 5px;
+          padding: 3px;
+        }
+        .nameField{
+          margin-top: 30px;
+          &__text{
+            width: 100%;
+            height: 48px;
+            font-weight: normal;
+            border: lightgray solid 1px;
+            border-radius: 5px;
+            padding: 0 16px;
+          }
+        }
+      }
+      &__discribe{
+        font-weight: bold;
+        padding: 30px;
+        border-bottom: lightgray solid 1px;
+        span{
+          font-size: 13px;
+          font-weight: normal;
+          color: white;
+          background-color: red;
+          border-radius: 5px;
+          padding: 3px;
+        }
+        .discribeField{
+          margin-top: 30px;
+          &__text{
+            width: 100%;
+            height: 150px;
+            font-weight: normal;
+            border: lightgray solid 1px;
+            border-radius: 5px;
+            padding: 0 16px;
+            resize: vertical;
+          }
+        }
+      }
+      &__brand{
+        font-weight: bold;
+        padding: 30px;
+        border-bottom: lightgray solid 1px;
+        span{
+          font-weight: normal;
+          font-size: 13px;
+          color: white;
+          background-color:gray;
+          border-radius: 5px;
+          padding: 3px;
+        }
+        .brandField{
+          margin-top: 30px;
+          &__text{
+            width: 100%;
+            height: 48px;
+            font-weight: normal;
+            border: lightgray solid 1px;
+            border-radius: 5px;
+            padding: 0 16px;
+          }
+        }
+      }
+      &__status{
+        font-weight: bold;
+        padding: 30px;
+        border-bottom: lightgray solid 1px;
+        span{
+          font-weight: normal;
+          font-size: 13px;
+          color: white;
+          background-color: red;
+          border-radius: 5px;
+          padding: 3px;
+        }
+        .statusField{
+          margin-top: 30px;
+          &__text{
+            width: 100%;
+            height: 48px;
+            font-weight: normal;
+            border: lightgray solid 1px;
+            border-radius: 5px;
+            padding: 0 16px;
+          }
+        }
+      }
+      &__category{
+        font-weight: bold;
+        padding: 30px;
+        border-bottom: lightgray solid 1px;
+        span{
+          font-size: 13px;
+          font-weight: normal;
+          color: white;
+          background-color: red;
+          border-radius: 5px;
+          padding: 3px;
+        }
+        .categoryField{
+          margin-top: 30px;
+          &__text{
+            width: 100%;
+            height: 48px;
+            font-weight: normal;
+            border: lightgray solid 1px;
+            border-radius: 5px;
+            padding: 0 16px;
+          }
+        }
+      }
+      &__shipping{
+        color: gray;
+        font-size: 14px;
+        padding: 30px;
+        border-bottom: lightgray solid 1px;
+        .shippingLists{
+          font-size: 16px;
+          color: black;
+          font-weight: bold;
+          &__cost{
+            margin-top: 10px;
+            span{
+              font-size: 13px;
+              font-weight: normal;
+              color: white;
+              background-color: red;
+              border-radius: 5px;
+              padding: 3px;
+            }
+            .costField{
+              margin: 30px 0;
+              &__text{
+                width: 100%;
+                height: 48px;
+                font-weight: normal;
+                border: lightgray solid 1px;
+                border-radius: 5px;
+                padding: 0 16px;
+              }
+            }
+          }
+          &__from{
+            span{
+              font-size: 13px;
+              color: white;
+              background-color: red;
+              border-radius: 5px;
+              padding: 3px;
+            }
+            .fromField{
+              margin: 30px 0;
+              &__text{
+                width: 100%;
+                height: 48px;
+                font-weight: normal;
+                border: lightgray solid 1px;
+                border-radius: 5px;
+                padding: 0 16px;
+              }
+            }
+          }
+          &__days{
+            span{
+              font-size: 13px;
+              color: white;
+              background-color: red;
+              border-radius: 5px;
+              padding: 3px;
+            }
+            .daysField{
+              margin: 30px 0;
+              &__text{
+                width: 100%;
+                height: 48px;
+                font-weight: normal;
+                border: lightgray solid 1px;
+                border-radius: 5px;
+                padding: 0 16px;
+              }
+            }
+          }
+        }
+      }
+      &__price{
+        .priceHeader{
+          color: gray;
+          font-size: 14px;
+          padding: 30px;
+        }
+        .priceLists{
+          display: flex;
+          justify-content: space-between;
+          &__leftContents{
+            .priceTexts{
+              font-size: 16px;
+              color: black;
+              font-weight: bold;
+              &__value{
+                padding-left: 30px;
+                span{
+                  font-size: 13px;
+                  color: white;
+                  background-color: red;
+                  border-radius: 5px;
+                  padding: 3px;
+                }
+              }
+              &__fee{
+                padding: 20px 0px 0px 30px;
+              }
+              &__profit{
+                padding: 20px 0px 0px 30px;
+              }
+            }
+          }
+          &__rightContents{
+            .priceField{
+              &__form{
+                margin-right: 30px;
+                margin-bottom: 40px;
+                display: flex;
+                text-align: center;
+                &--text{
+                  width: 180px;
+                  height: 35px;
+                  border: lightgray solid 1px;
+                  border-radius: 5px;
+                  padding: 0 16px;
+                  text-align: right;
+                }
+                h1{
+                  margin-right: 10px;
+                  margin-top: 7px;
+                }
+              }
+              &__unit{
+              }
+              &__value{
+                width: 200px;
+                border-bottom: lightgray solid 1px;
+                padding: 18px 30px 0px 0px;
+                text-align: right;
+              }
+            }
+            .profitLists{
+              &__unit{
+              }
+              &__value{
+                width: 200px;
+                border-bottom: lightgray solid 1px;
+                padding: 18px 30px 0px 0px;
+                text-align: right;
+              }
+            }
+          }
+        }
+      }
+      &__action{
+        text-align: center;
+        .sellButton{
+          width: 200px;
+          height: 50px;
+          color: white;
+          font-size: 17px;
+          font-weight: bold;
+          background-color: red;
+          margin-top: 30px;
+          padding: 0 24px;
+          border-style: none;
+          border-radius: 10px;
+        }
+        .sellButton:hover{
+          background-color:red;
+          opacity: 0.7;
+        }
+      }
+      &__consent{
+        font-size: 14px;
+        text-align: center;
+        padding: 30px 0;
+        a{
+          text-decoration: none;
+          color:#0095ee;
+        }
+      }
+    }
+  }
+  .sellFooter{
+    text-align: center;
+    .box{
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+      &__privacy{
+        font-size: 14px;
+        a{
+          text-decoration: none;
+          color: black;
+        }
+        a:hover{
+          background-color: whitesmoke;
+          opacity: 0.4;
+        }
+      }
+      &__terms{
+        font-size: 14px;
+        margin-left: 20px;
+        a{
+          text-decoration: none;
+          color: black;
+        }
+        a:hover{
+          background-color: whitesmoke;
+          opacity: 0.4;
+        }
+      }
+      &__transaction{
+        font-size: 14px;
+        margin-left: 20px;
+        a{
+          text-decoration: none;
+          color: black;
+        }
+        a:hover{
+          background-color: whitesmoke;
+          opacity: 0.4;
+        }
+      }
+    }
+    .icon{
+      padding-top: 30px;
+      img{
+        width: 140px;
+        height: 40.55px;
+        vertical-align: bottom;
+      }
+    }
+    .copyRight{
+      font-size: 12px;
+    }
+  }
+}
