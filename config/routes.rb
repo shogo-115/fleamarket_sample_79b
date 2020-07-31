@@ -12,10 +12,9 @@ Rails.application.routes.draw do
     get 'edit_address', to: 'users/registrations#edit_address'
     patch 'update_address', to: 'users/registrations#update_address'
   end
-
+  resources :buys, only: :new
   root 'toppages#index'
   resources :users, only: :show
   get 'after_logout', to: 'users#logout'
   delete 'user_delete', to: 'users#delete'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

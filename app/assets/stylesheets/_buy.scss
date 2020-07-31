@@ -1,0 +1,110 @@
+.buyContents{
+  width: 700px;
+  background-color: white;
+  margin: 0 auto;
+  padding: 0 180px;
+  &__fildTitle{
+    font-weight: bold;
+    padding: 30px;
+    border-bottom: lightgray solid 1px;
+    text-align: center;
+    font-size: 25px;
+  }
+  &__fildProduct{
+    font-weight: bold;
+    display: inline-block;
+    padding: 30px;
+    border-bottom: lightgray solid 1px;
+    width: 340px;
+    &__area{
+      display: flex;
+      &--image{
+        .image{
+          height: 80px;
+          width: 80px;
+        }
+      }
+      &--price{
+        margin-left: 50px;
+      }
+    }
+  }
+  &__fildc{
+    font-weight: bold;
+    padding: 30px;
+    border-bottom: lightgray solid 1px;
+    &--a{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+  }
+  &__fildd{
+    font-weight: bold;
+    padding: 30px;
+    border-bottom: lightgray solid 1px;
+    &--c{
+      h3{
+      font-size: 16px;
+      margin-bottom: 15px;
+      font-weight: bold;
+      }
+      p{
+        font-size: 12px;
+        margin-bottom: 15px;
+      }
+    }
+    a{
+      font-size: 12px;
+      text-decoration: none;
+    }
+  }
+  &__filde{
+    font-weight: bold;
+    padding: 30px;
+    border-bottom: lightgray solid 1px;
+    &--d{
+      font-size: 12px;
+      margin-bottom: 15px;
+      h3{
+        font-size: 16px;
+        font-weight: bold;
+      }
+    }
+    a{
+      font-size: 12px;
+      text-decoration: none;
+    }
+  }
+  &__fildf{
+    font-weight: bold;
+    padding: 30px;
+    &--e{
+      p{
+        margin-bottom: 15px;
+      }
+    }
+    form{
+      display: flex;
+      justify-content: center;
+      .btn2{
+        width: 200px;
+        height: 50px;
+        color: white;
+        font-size: 17px;
+        font-weight: bold;
+        background-color: red;
+        margin-top: 20px;
+        padding: 0 24px;
+        border-style: none;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+      .btn2:hover{
+        background-color:red;
+        opacity: 0.7;
+      }
+    }
+  }
+}
