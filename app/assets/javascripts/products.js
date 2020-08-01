@@ -49,6 +49,7 @@ $(document).on('turbolinks:load', function(){
       $inputs.each(function(num, input){
         $(input).removeAttr('src');
         $(input).attr({
+          name:"product[images_attributes][" + num + "][src]",
           src:"product[images_attributes][" + num + "][src]",
           id:"product_images_attributes_" + num + "_src"
         });
