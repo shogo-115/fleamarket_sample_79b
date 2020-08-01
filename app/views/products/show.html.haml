@@ -1,0 +1,113 @@
+= render partial: "layouts/header"
+
+
+.Main
+  .showMain
+    .contentROOM
+      .contentbox
+        .contentitem
+          %h2.contentitem__title
+            = @product.name
+          .contentitem__body
+            %ul.contentitem__picture
+              %li.contentitem__list
+                - @proImgs.each do |proImg|
+                  = image_tag proImg.src.url, alt: "NoImage"
+          .contentitem__price
+            .contentitem__prices
+              = @product.price
+            .contentitem__detail
+              .contentitem__price--detail
+                (税込) 送料込み
+          .contentDetail
+            = @product.discribe
+          .prodact
+            .prodact__ROOM
+              .prodact__itemroom
+                .prodact__MYroom
+                  .prodact__name
+                    出品者
+                  .prodact__Introduction
+                    = @producter.nick_name
+                .prodact__MYroom
+                  .prodact__name
+                    カテゴリー
+                  .prodact__Introduction
+                    = @categorie.name
+                .prodact__MYroom
+                  .prodact__name
+                    ブランド
+                  .prodact__Introduction
+                    = @product.brand
+                .prodact__MYroom
+                  .prodact__name
+                    商品の状態
+                  .prodact__Introduction
+                    = @product.status_i18n
+                .prodact__MYroom
+                  .prodact__name
+                    配送料の負担
+                  .prodact__Introduction
+                    = @product.shipping_cost_i18n
+                .prodact__MYroom
+                  .prodact__name
+                    発送元の地域
+                  .prodact__Introduction
+                    = @product.shipping_from_i18n
+                .prodact__MYroom
+                  .prodact__name
+                    発送日の目安
+                  .prodact__Introduction
+                    = @product.days_i18n
+          .react
+            -if user_signed_in? && current_user.id == @product.user_id
+              %ul.rightList
+                %li.rightList__item--mypage
+                  = link_to "#" do
+                    編集
+                  = link_to "#" do
+                    削除
+            -else
+              %ul.rightList
+                %li.rightList__item--login
+                  = link_to "#" do
+                    購入する
+        .commentBox
+          = form_for([@product, @comment], local: true, id: 'new_comment') do |f|
+            .userContents__fild
+              コメント
+              .inputarea
+                = f.text_area :comment, class:'comment_area'
+              .userContents__action
+                = f.submit "コメントする", class:'comment_btn'
+            .commentBox_all
+              - @comments.each do |comment| 
+                = comment.user.nick_name
+                = comment.comment
+        .nextpagelink
+          = link_to "/products/#{(@product.id).to_i - 1}" do
+            前の商品
+          = link_to "/products/#{(@product.id).to_i + 1}" do
+            後ろのページ
+        .productList
+          = link_to "#" do
+            .productList--img
+              = image_tag 'a007.png'
+            .productList--body
+              %h3.name
+                product3
+              .details
+                %ul
+                  %li
+                    3000円
+                  %li
+                    = icon('fas', 'star', class:'likeIcon')
+                    0
+                %p
+                  (税込)
+        
+
+ 
+  
+
+= render partial: "layouts/footer"

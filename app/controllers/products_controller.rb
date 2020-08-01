@@ -37,6 +37,15 @@ class ProductsController < ApplicationController
     redirect_to root_path
   end
 
+  def show
+    @product = Product.find(params[:id])
+    @producter = User.find_by(id: @product.user_id)
+    @categorie = Category.find_by(id: @product.category_id)
+    @proImgs = Image.where(product_id: params[:id])
+    @comment = Comment.new
+    @comments = Comment.where(product_id: params[:id])
+  end
+
   private
 
   def product_params
