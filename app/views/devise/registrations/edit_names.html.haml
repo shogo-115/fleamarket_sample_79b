@@ -6,14 +6,14 @@
     = form_with(model: @name, url: update_names_path ,local:true) do |form|
       = render "devise/shared/error_messages", resource: @name
       .userContents__name
-        姓 名（半角不可）
+        姓名（半角不可）
         %span 必須
         .inputarea
           %br/
           = form.text_field :family_name, placeholder: "姓"
           = form.text_field :first_name,placeholder: "名"
       .userContents__name
-        姓 名 フリガナ（カタカナ)
+        姓名 フリガナ（カタカナ)
         %span 必須
         .inputarea
           = form.text_field :family_name_f,placeholder: "フリマ"
