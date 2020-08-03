@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   resources :users, only: :show
   get 'after_logout', to: 'users#logout'
   delete 'user_delete', to: 'users#delete'
+  get 'newlook', to: 'newlooks#index'
 end

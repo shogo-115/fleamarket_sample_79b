@@ -373,6 +373,18 @@
           opacity: 0.7;
         }
       }
+      &__back{
+        margin-top: 15px;
+        text-align: center;
+        a{
+          text-decoration: none;
+          color: black;
+        }
+        a:hover{
+          background-color: whitesmoke;
+          opacity: 0.7;
+        }
+      }
       &__consent{
         font-size: 14px;
         text-align: center;
