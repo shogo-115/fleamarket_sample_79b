@@ -65,7 +65,7 @@
                 = f.select :days, Product.days_i18n.invert, {prompt: '選択してください'}, class: "daysField__text"
         .sellContents__price
           .priceHeader
-          販売価格（￥300〜￥9,999,999）
+            販売価格（￥300〜￥9,999,999）
           .priceLists
             .priceLists__leftContents
               %ul.priceTexts
@@ -91,7 +91,8 @@
             = f.submit "出品する", class: 'sellButton'
           %div
             = link_to root_url do
-              戻る
+              トップページに戻る
+              
       .sellContents__consent
         %p 
         禁止されている

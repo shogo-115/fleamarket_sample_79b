@@ -26,7 +26,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def update
     user = User.find(current_user.id)
     user.update(user_params)
-    render "toppages/index"
+    render "products/index"
   end
 
   def create_names
@@ -49,7 +49,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def update_names
     name = Name.find_by(user_id: current_user.id)
     name.update(name_params)
-    render "toppages/index"
+    render "products/index"
   end
 
   def create_address
@@ -64,7 +64,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user.build_address(@address.attributes)
     @user.save
     sign_in(:user, @user)
-    render "toppages/index"
+    render "products/index"
   end
 
   def edit_address
@@ -74,7 +74,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def update_address
     address = Address.find_by(user_id: current_user.id)
     address.update(address_params)
-    render "toppages/index"
+    render "products/index"
   end
 
   protected
