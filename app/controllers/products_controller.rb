@@ -33,8 +33,9 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @product.destroy
-    redirect_to root_path
+    product = Product.find(params[:id])
+    product.destroy
+    redirect_to after_prodDlt_path
   end
 
   def show
@@ -44,6 +45,9 @@ class ProductsController < ApplicationController
     @proImgs = Image.where(product_id: params[:id])
     @comment = Comment.new
     @comments = Comment.where(product_id: params[:id])
+  end
+
+  def proDlt
   end
 
   private

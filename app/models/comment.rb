@@ -1,4 +1,6 @@
 class Comment < ApplicationRecord
-  has_one :products, dependent: :destroy
+  belongs_to :product, dependent: :destroy
   belongs_to :user, optional: true
+
+  validates :text ,presence: true
 end

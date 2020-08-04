@@ -139,8 +139,68 @@
 }
 
 .commentBox{
-  padding: 24px;
+  padding: 20px;
   background-color: #fff;
   margin: 10px 0;
   text-align: center;
+  .comment_area{
+    width: 100%;
+    min-height: 104px;
+    padding: 10px;
+  }
+  .comment_btn{
+    line-height: 48px;
+    background: #3CCACE;
+    border: 1px solid #3CCACE;
+    color: #fff;
+    width: 60%;
+    font-size: 18px;
+    border-radius: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .commentRoom{
+    padding: 24px;
+    background-color: #fff;
+    margin: 20px 0;
+  }
+  .commentpoint{
+    float: left;
+  }
+  .commenttext{
+    float: left;
+    
+  }
+}
+
+.rightList{
+  display: flex;
+  margin-bottom: 30px;
+  justify-content: space-evenly;
+  a{
+    text-decoration: none;
+    margin-right: 15px;
+    color: #3CCACE;
+    font-size: 20px;
+  }
+}
+
+.commentBox h2{
+  color: #3CCACE;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.productList{
+  background-color: #fff;
+  padding: 24px 40px 40px;
+  margin: 0;
+  h2{
+    color: #3CCACE;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+  }
 }

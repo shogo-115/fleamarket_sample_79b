@@ -21,4 +21,6 @@ Rails.application.routes.draw do
   resources :products do
     resources :comments, only: :create
   end
+  get 'after_prodDlt',to: 'products#proDlt'
+
 end

@@ -1,8 +1,15 @@
 $(function(){
   function buildHTML(comment){
     let html = `
-                    <a href=/users/${comment.user_id}>${comment.user_name}</a>：
-                  ${comment.comment}
+                <div class='commentRoom'>
+                  <div class='commentpoint'>
+                    ${comment.user_name}
+                    :
+                    ${comment.created_at}
+                    <br/>
+                    <div class="commenttext">${comment.text}</div>
+                  </div>
+                </div>
                 `
     return html;
   }
@@ -20,11 +27,14 @@ $(function(){
     })
     .done(function(data){
       let html = buildHTML(data);
-      $('.comment_area').append(html);
+      $('.commentAll').append(html);
+      $('#comment_text').val('');
+      $('#commentEmpty').remove();
       $('.comment_btn').prop('disabled', false);
     })
     .fail(function(){
-      alert('error');
+      $('.comment_btn').prop('disabled', false);
+      alert('コメントを入力してください');
     })
   })
 });

@@ -65,7 +65,7 @@
                 %li.rightList__item--mypage
                   = link_to "#" do
                     編集
-                  = link_to "#" do
+                  = link_to "/products/#{@product.id}", method: :delete do
                     削除
             -else
               %ul.rightList
@@ -73,23 +73,30 @@
                   = link_to "#" do
                     購入する
         .commentBox
-          = form_for([@product, @comment], local: true, id: 'new_comment') do |f|
-            .userContents__fild
-              コメント
-              .inputarea
-                = f.text_area :comment, class:'comment_area'
-              .userContents__action
-                = f.submit "コメントする", class:'comment_btn'
-            .commentBox_all
+          -if user_signed_in? 
+            = form_with(model: [@product, @comment], local: true, id: "new_comment") do |f|
+              .userContents__fild
+                %h2 コメント
+                .inputarea
+                  = f.text_area :text, class:'comment_area', placeholder:'相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。'
+                .userContents__action
+                  = f.submit "コメントする", class:'comment_btn'
+          .commentAll
+            - if @comments.empty?
+              #commentEmpty 現在、本商品に関するコメントはありません。
+            - else
+              %h2 コメント一覧
               - @comments.each do |comment| 
-                = comment.user.nick_name
-                = comment.comment
-        .nextpagelink
-          = link_to "/products/#{(@product.id).to_i - 1}" do
-            前の商品
-          = link_to "/products/#{(@product.id).to_i + 1}" do
-            後ろのページ
+                .commentRoom
+                  .commentpoint
+                    = comment.user.nick_name
+                    ：
+                    = comment.created_at.strftime("%Y-%m-%d %H:%M")
+                    %br
+                    .commenttext
+                      = comment.text
         .productList
+          %h2 その他のおすすめの商品
           = link_to "#" do
             .productList--img
               = image_tag 'a007.png'
@@ -104,10 +111,9 @@
                     = icon('fas', 'star', class:'likeIcon')
                     0
                 %p
-                  (税込)
-        
-
- 
-  
-
+                  (税込) 
+= link_to new_product_path do
+  .purchaseBtn
+    %span.purchaseBtn__text 出品する
+    = image_tag 'icon_camera.png', class:"purchaseBtn__icon" 
 = render partial: "layouts/footer"
