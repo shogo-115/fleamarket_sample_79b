@@ -28,13 +28,14 @@ $(function(){
     .done(function(data){
       let html = buildHTML(data);
       $('.commentAll').append(html);
-      $('#comment_text').val('');
       $('#commentEmpty').remove();
-      $('.comment_btn').prop('disabled', false);
     })
     .fail(function(){
-      $('.comment_btn').prop('disabled', false);
       alert('コメントを入力してください');
+    })
+    .always(function(){
+      $('#new_comment')[0].reset();
+      $('.comment_btn').prop('disabled', false);
     })
   })
 });
