@@ -1,5 +1,4 @@
 .newlookMain{
-  height: 100%;
   background-color: #f8f8f8;
   .newlookHeader{
     font-size: 24px;
@@ -9,12 +8,13 @@
   }
   .productBox{
     .productLists{
-      margin: 25px;
+      margin-top: 25px;
       a{
         text-decoration: none;
         position: relative;
       }
       .productList{
+        background-color: #f8f8f8;
         width: 1300px;
         margin: 0 auto;
         a{
