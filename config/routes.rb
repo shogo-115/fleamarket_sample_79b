@@ -18,4 +18,8 @@ Rails.application.routes.draw do
   resources :users, only: :show
   get 'after_logout', to: 'users#logout'
   delete 'user_delete', to: 'users#delete'
+  resources :products do
+    resources :comments, only: :create
+  end
+  get 'newlook', to: 'newlooks#index'
 end

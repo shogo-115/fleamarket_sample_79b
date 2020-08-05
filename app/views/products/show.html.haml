@@ -1,2 +1,117 @@
-= link_to edit_product_path do
-  edit
+= render partial: "layouts/header"
+.Main
+  .showMain
+    .contentROOM
+      .contentbox
+        .contentitem
+          %h2.contentitem__title
+            = @product.name
+          .contentitem__body
+            %ul.contentitem__picture
+              %li.contentitem__list
+                - @proImgs.each do |proImg|
+                  = image_tag proImg.src.url, alt: "NoImage"
+          .contentitem__price
+            .contentitem__prices
+              = @product.price
+            .contentitem__detail
+              .contentitem__price--detail
+                (税込) 送料込み
+          .contentDetail
+            = @product.discribe
+          .prodact
+            .prodact__ROOM
+              .prodact__itemroom
+                .prodact__MYroom
+                  .prodact__name
+                    出品者
+                  .prodact__Introduction
+                    = @producter.nick_name
+                .prodact__MYroom
+                  .prodact__name
+                    カテゴリー
+                  .prodact__Introduction
+                    = @categorie.name
+                .prodact__MYroom
+                  .prodact__name
+                    ブランド
+                  .prodact__Introduction
+                    = @product.brand
+                .prodact__MYroom
+                  .prodact__name
+                    商品の状態
+                  .prodact__Introduction
+                    = @product.status_i18n
+                .prodact__MYroom
+                  .prodact__name
+                    配送料の負担
+                  .prodact__Introduction
+                    = @product.shipping_cost_i18n
+                .prodact__MYroom
+                  .prodact__name
+                    発送元の地域
+                  .prodact__Introduction
+                    = @product.shipping_from_i18n
+                .prodact__MYroom
+                  .prodact__name
+                    発送日の目安
+                  .prodact__Introduction
+                    = @product.days_i18n
+          .react
+            -if user_signed_in? && current_user.id == @product.user_id
+              %ul.rightList
+                %li.rightList__item--mypage
+                  = link_to "#" do
+                    編集
+                  = link_to "/products/#{@product.id}", method: :delete do
+                    削除
+            -else
+              %ul.rightList
+                %li.rightList__item--login
+                  = link_to "#" do
+                    購入する
+        .commentBox
+          -if user_signed_in? 
+            = form_with(model: [@product, @comment], local: true, id: "new_comment") do |f|
+              .userContents__fild
+                %h2 コメント
+                .inputarea
+                  = f.text_area :text, class:'comment_area', placeholder:'相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。'
+                .userContents__action
+                  = f.submit "コメントする", class:'comment_btn'
+          .commentAll
+            - if @comments.empty?
+              #commentEmpty 現在、本商品に関するコメントはありません。
+            - else
+              %h2 コメント一覧
+              - @comments.each do |comment| 
+                .commentRoom
+                  .commentpoint
+                    = comment.user.nick_name
+                    ：
+                    = comment.created_at.strftime("%Y-%m-%d")
+                    %br
+                    .commenttext
+                      = comment.text
+        .productList
+          %h2 その他のおすすめの商品
+          = link_to "#" do
+            .productList--img
+              = image_tag 'a007.png'
+            .productList--body
+              %h3.name
+                product3
+              .details
+                %ul
+                  %li
+                    3000円
+                  %li
+                    = icon('fas', 'star', class:'likeIcon')
+                    0
+                %p
+                  (税込) 
+= link_to new_product_path do
+  .purchaseBtn
+    %span.purchaseBtn__text 出品する
+    = image_tag 'icon_camera.png', class:"purchaseBtn__icon" 
+= render partial: "layouts/footer"

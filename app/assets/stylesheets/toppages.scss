@@ -361,6 +361,35 @@ h1{
       }
     }
   }
+  .popularContents{
+    height: 150px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #3CCACE;
+    text-align: center;
+    margin-top: 20px;
+    .contentsList{
+      display: flex;
+      justify-content: center;
+      &__item{
+        font-size: 20px;
+        background-color: rgb(245, 234, 234);
+        border-style: none;
+        border-radius: 10px;
+        margin: 15px;
+        padding: 3px;
+        
+        a{
+          text-decoration: none;
+          color: black;
+        }
+        a:hover{
+          background-color: whitesmoke;
+          opacity: 0.6;
+        }
+      }
+    }
+  }
   .pickupContents:last-child{
     padding-bottom: 80px;
   }
@@ -368,28 +397,32 @@ h1{
     padding: 80px 0 0;
     background-color: #f8f8f8;
     height: 100%;
-    .pickupTitle{
+    width: 100%;
+    .contentsHeader{
       text-align: center;
-      font-size: 28px;
-      line-height: 1.4;
-      font-weight: bold;
-    }
-    .productBox{
-      .productSubHead{
-        text-align: center;
+      &__title{
+        color: #3CCACE;
+        font-size: 24px;
+        font-weight: bold;
+      }
+      &__more{
         a{
-          font-size: 24px;
+          font-size: 18px;
           text-decoration: none;
-          color: #3CCACE;
-          .title{
-            font-weight: bold;
-          }
+          color: black;
+        }
+        a:hover{
+          background-color: whitesmoke;
+          opacity: 0.5;
         }
       }
+    }
+    .productBox{
       .productLists{
-        margin: 25px ;
+        margin: 25px;
         display: flex;
-        justify-content:center;
+        overflow-y: hidden;
+        overflow-x: scroll;
         a{
           text-decoration: none;
           position: relative;
@@ -397,10 +430,15 @@ h1{
         .productList{
           display:inline-flex;
           justify-content:center;
-          float: left;
           a{
-            background-color: #fff;
+            background-color: white;
             display: inline-block;
+            border-style: none;
+            margin: 15px;
+            box-shadow: 7px 7px 10px 5px lightgray;
+          }
+          a:hover{
+            opacity:0.7;
           }
           a:hover{
             opacity:0.7;

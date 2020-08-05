@@ -4,25 +4,25 @@ describe Address do
     it "is invalid without a postNo" do
       user = build(:address, postNo: "")
       user.valid?
-      expect(user.errors[:postNo]).to include("can't be blank")
+      expect(user.errors[:postNo]).to include("を入力してください")
     end
 
     it "is invalid without a pref" do
       user = build(:address, pref: "")
       user.valid?
-      expect(user.errors[:pref]).to include("can't be blank")
+      expect(user.errors[:pref]).to include("を入力してください")
     end
 
     it "is invalid without a city" do
       user = build(:address, city: "")
       user.valid?
-      expect(user.errors[:city]).to include("can't be blank")
+      expect(user.errors[:city]).to include("を入力してください")
     end
 
     it "is invalid without a block" do
       user = build(:address, block: "")
       user.valid?
-      expect(user.errors[:block]).to include("can't be blank")
+      expect(user.errors[:block]).to include("を入力してください")
     end
 
     it "is valid without a building " do
@@ -33,25 +33,25 @@ describe Address do
     it "is invalid without a family_name" do
       user = build(:address, family_name: "")
       user.valid?
-      expect(user.errors[:family_name]).to include("can't be blank")
+      expect(user.errors[:family_name]).to include("を入力してください")
     end
 
     it "is invalid without a first_name" do
       user = build(:address, first_name: "")
       user.valid?
-      expect(user.errors[:first_name]).to include("can't be blank")
+      expect(user.errors[:first_name]).to include("を入力してください")
     end
 
     it "is invalid without a family_name_f" do
       user = build(:address, family_name_f: "")
       user.valid?
-      expect(user.errors[:family_name_f]).to include("can't be blank")
+      expect(user.errors[:family_name_f]).to include("を入力してください")
     end
 
     it "is invalid without a first_name_f" do
       user = build(:address, first_name_f: "")
       user.valid?
-      expect(user.errors[:first_name_f]).to include("can't be blank")
+      expect(user.errors[:first_name_f]).to include("を入力してください")
     end
     
     it "is valid without a phon " do
