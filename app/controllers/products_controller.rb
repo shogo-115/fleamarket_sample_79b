@@ -1,8 +1,9 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-  before_action :set_product, only: [:edit, :update, :destroy]
+  before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   def index
+    @products = Product.all
     @products = Product.includes(:images).order('created_at DESC').limit(4)
   end
 
@@ -21,12 +22,15 @@ class ProductsController < ApplicationController
     end
   end
 
+  def show
+  end
+
   def edit
   end
 
   def update
     if @product.update(product_params)
-      redirect_to root_path
+      redirect_to product_path
     else
       render :edit
     end
