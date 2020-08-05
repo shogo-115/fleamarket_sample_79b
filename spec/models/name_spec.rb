@@ -4,31 +4,31 @@ describe Name do
     it "is invalid without a family_name" do
       user = build(:name, family_name: "")
       user.valid?
-      expect(user.errors[:family_name]).to include("can't be blank")
+      expect(user.errors[:family_name]).to include("を入力してください")
     end
 
     it "is invalid without a first_name " do
       user = build(:name, first_name: "")
       user.valid?
-      expect(user.errors[:first_name ]).to include("can't be blank")
+      expect(user.errors[:first_name ]).to include("を入力してください")
     end
 
     it "is invalid without a family_name_f " do
       user = build(:name, family_name_f: "")
       user.valid?
-      expect(user.errors[:family_name_f ]).to include("can't be blank")
+      expect(user.errors[:family_name_f ]).to include("を入力してください")
     end
 
     it "is invalid without a first_name_f " do
       user = build(:name, first_name_f: "")
       user.valid?
-      expect(user.errors[:first_name_f ]).to include("can't be blank")
+      expect(user.errors[:first_name_f ]).to include("を入力してください")
     end
 
     it "is invalid without a birthday " do
       user = build(:name, birthday: "")
       user.valid?
-      expect(user.errors[:birthday ]).to include("can't be blank")
+      expect(user.errors[:birthday ]).to include("を入力してください")
     end
 
     #姓に半角数字が入った場合、保存できない
