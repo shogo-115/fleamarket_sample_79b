@@ -39,11 +39,11 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @producter = User.find_by(id: @product.user_id)
-    @categorie = Category.find_by(id: @product.category_id)
-    @proImgs = Image.where(product_id: params[:id])
+    @producter = @product.user
+    @categorie = @product.category
+    @proImgs = @product.images
     @comment = Comment.new
-    @comments = Comment.where(product_id: params[:id])
+    @comments = @product.comments
     
   end
 
