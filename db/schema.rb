@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2020_08_03_050232) do
-=======
-ActiveRecord::Schema.define(version: 2020_07_25_021259) do
->>>>>>> parent of cda564d... 商品出品機能
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "postNo", null: false
@@ -33,7 +29,6 @@ ActiveRecord::Schema.define(version: 2020_07_25_021259) do
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
-<<<<<<< HEAD
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -60,8 +55,6 @@ ActiveRecord::Schema.define(version: 2020_07_25_021259) do
     t.index ["product_id"], name: "index_images_on_product_id"
   end
 
-=======
->>>>>>> parent of cda564d... 商品出品機能
   create_table "names", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "family_name", null: false
     t.string "first_name", null: false
@@ -87,11 +80,8 @@ ActiveRecord::Schema.define(version: 2020_07_25_021259) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-<<<<<<< HEAD
   add_foreign_key "comments", "products"
   add_foreign_key "images", "products"
   add_foreign_key "products", "categories"
   add_foreign_key "products", "users"
-=======
->>>>>>> parent of cda564d... 商品出品機能
 end
