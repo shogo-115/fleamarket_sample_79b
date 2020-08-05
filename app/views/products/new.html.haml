@@ -8,18 +8,25 @@
           .sellContents__image__h
             %label 出品画像
             %span 必須
-            .formImage__text 最大10枚までアップロードできます
-            = f.fields_for :images do |image|
-              .imageBox
-                %ul#previews
-                  %li.input
-                    %label.uploadLabel
-                      .uploadLabel__text
-                        ドラッグアンドドロップ
-                        %br
-                        またはクリックしてファイルをアップロード
-                        .inputArea
-                          = image.file_field :src, class: "hidden imageUpload"
+            .formImage__text 最大5枚までアップロードできます
+            .imageBox
+              .previewBox
+                .previews
+                .uploadLabel
+                  = f.label :"images_attributes_#{@product.images.length}_src", class: "uploadLabel__box", id: "labelBox--#{@product.images.length}" do
+                    #dropArea
+                    = icon("fa", "camera", class: "labelIcon")
+                    %pre.uploadLabel__text
+                      クリックしてファイルをアップロード
+                .hidden
+                  = f.fields_for :images do |image|
+                    = image.file_field :src, class: "hiddenField"
+                    = image.check_box :_destroy, class: "hiddenCheckBox"
+                  - @product.images.length.upto(4) do |i|
+                    %input{class: "hiddenField", type: "file", name: "product[images_attributes][#{i}][src]", id: "product_images_attributes_#{i}_src"}
+              - if @product.errors.include?(:images)
+                %p.errorMessage
+                  = @product.errors.full_message_for(:images).first
         .sellContents__name
           商品名 
           %span 必須
@@ -44,7 +51,7 @@
           カテゴリー
           %span 必須
           .categoryField
-            = f.collection_select :category_id, Category.all, :id, :name, {prompt: '選択してください'}, class: "categoryField__text"
+            = f.collection_select :category_id, Category.all.limit(13), :id, :name, {prompt: '選択してください'}, class: "categoryField__text"
         .sellContents__shipping
           配送について
           %ul.shippingLists

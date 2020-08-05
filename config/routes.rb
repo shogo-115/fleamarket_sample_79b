@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     patch 'update_address', to: 'users/registrations#update_address'
   end
   root 'products#index'
-  resources :products, expect: :show
+  resources :products
   resources :buys, only: :new
   resources :users, only: :show
   get 'after_logout', to: 'users#logout'
