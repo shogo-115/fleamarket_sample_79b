@@ -13,7 +13,7 @@ describe Image do
       it "is invalid with a image" do
         image = build(:image, src: "")
         image.valid?
-        expect(image.errors[:image]).to include("")
+        expect(image.errors[:image]).to include()
       end
     end
   end

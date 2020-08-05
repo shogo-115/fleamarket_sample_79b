@@ -1,0 +1,84 @@
+.newlookMain{
+  height: 100%;
+  background-color: #f8f8f8;
+  .newlookHeader{
+    font-size: 24px;
+    font-weight: bold;
+    color: #3CCACE;
+    padding: 20px;
+  }
+  .productBox{
+    .productLists{
+      margin: 25px;
+      a{
+        text-decoration: none;
+        position: relative;
+      }
+      .productList{
+        width: 1300px;
+        margin: 0 auto;
+        a{
+          background-color: white;
+          display: inline-block;
+          border-style: none;
+          margin: 15px;
+          box-shadow: 7px 7px 10px 5px lightgray;
+        }
+        a:hover{
+          opacity:0.7;
+        }
+        &--img{
+          width: 220px;
+          height: 150px;
+          position: relative;
+          overflow: hidden;
+          margin: 0;
+          z-index: auto;
+          img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            z-index: auto;
+            height: 150px;
+            object-fit: cover;
+          }
+        }
+        &--body{
+          background-color: white;
+          color: #333;
+          padding: 16px;
+          .name{
+            overflow: hidden;
+            line-height: 1.5;
+            font-size: 16px;
+            text-align: left;
+          }
+          .details{
+            font-size: 16px;
+            ul{
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              span{
+                font-size: 10px;
+              }
+              .likeIcon{
+                display: inline-block;
+                font: normal normal normal 14px/1;
+                font-size: inherit;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+              }
+              .likeIcon::before{
+                content: "\f005";
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

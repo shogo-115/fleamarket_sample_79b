@@ -1,5 +1,6 @@
 .userMain{
   background-color: rgb(245, 245, 245);
+  height: 100vh;
   .userHeader{
     text-align: center;
     .icon{
@@ -43,13 +44,8 @@
       font-weight: bold;
       padding: 30px;
       border-bottom: lightgray solid 1px;
-      #name_birthday_1i, #name_birthday_2i, #name_birthday_3i{
-        width: 205px;
-        height: 48px;
-        font-weight: normal;
-        border: lightgray solid 1px;
-        border-radius: 5px;
-        padding: 0 16px;
+      #name_birthday{
+        width:625px ;
       }
       span{
         font-size: 13px;

@@ -6,14 +6,14 @@
     = form_for @name do |f|
       = render "devise/shared/error_messages", resource: @name
       .userContents__name
-        姓 名（半角不可）
+        姓名（半角不可）
         %span 必須
         .inputarea
           %br/
           = f.text_field :family_name, placeholder: "姓"
           = f.text_field :first_name,placeholder: "名"
       .userContents__name
-        姓 名 フリガナ（カタカナ)
+        姓名 フリガナ（カタカナ)
         %span 必須
         .inputarea
           = f.text_field :family_name_f,placeholder: "フリマ"
@@ -22,7 +22,7 @@
         誕生日
         %span 必須
         .inputarea
-          = f.date_select :birthday, use_month_numbers: true,  start_year: 1930, end_year: (Time.now.year - 18), default: Date.new(1989, 1, 1)
+          = f.text_field :birthday
       .userContents__action
         = f.submit "次へ", class: 'userButton'
   .userFooter

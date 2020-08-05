@@ -1,10 +1,10 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-  before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :set_product, only: [:edit, :update, :destroy, :show]
 
   def index
-    @products = Product.all
-    @products = Product.includes(:images).order('created_at DESC').limit(4)
+    @products = Product.order('created_at DESC').limit(10)
+    @products = Product.includes(:images).order('created_at DESC').limit(10)
   end
 
   def new
@@ -45,8 +45,20 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @product.destroy
-    redirect_to root_path
+    product = Product.find(params[:id])
+    redirect_to after_prodDlt_path
+  end
+
+  def show
+    @producter = @product.user
+    @categorie = @product.category
+    @proImgs = @product.images
+    @comment = Comment.new
+    @comments = @product.comments
+    
+  end
+
+  def proDlt
   end
 
   private
