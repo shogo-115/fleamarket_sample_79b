@@ -53,7 +53,9 @@ $(document).on('turbolinks:load', function(){
     let yobun = $(".hiddenField").length - 5
     for (let i = 0; i < yobun; i++){
       $(".hiddenField").last().remove()
-    }};
+
+    }
+  };
 
   $(document).on('change', '.hiddenField', function(){
     let file = this.files[0];
@@ -103,7 +105,7 @@ $(document).on('turbolinks:load', function(){
       $('.uploadLabel__box').attr({id: `labelBox--${id}`, for: `product_images_attributes_${id}_src`});
     }
   })
-  //利益計算機能//
+
   $(".priceField__form--text").on("input", function() {
 
     var input = $(".priceField__form--text").val();
