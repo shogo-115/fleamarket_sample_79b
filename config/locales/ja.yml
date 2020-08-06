@@ -64,6 +64,20 @@ ja:
         maxThree: "2〜3日で発送"
         maxSeven: "4〜7日で発送" 
   activerecord:
+    models:
+      product: 商品
+      category: カテゴリー
+    attributes:
+      product:
+        images: 出品画像
+        name: 商品名
+        discribe: 商品の説明
+        status: 商品の状態
+        category: カテゴリー
+        shipping_cost: 配送料の負担
+        shipping_from: 発送元の地域
+        days: 発送までの日数
+        price: 販売価格
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
