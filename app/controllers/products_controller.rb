@@ -13,13 +13,25 @@ class ProductsController < ApplicationController
     @parents = Category.all.order("id ASC").limit(13)
   end
 
+  def children
+    @children = Category.find(params[:id]).children
+  end
+
+  def grandchildren
+    @grandchildren = Category.find(params[:id]).children
+  end
+
   def create
     @product = Product.new(product_params)
     if @product.save
       redirect_to root_path
     else
+      @product.images.new
       render :new
     end
+  end
+
+  def show
   end
 
   def edit
@@ -27,7 +39,7 @@ class ProductsController < ApplicationController
 
   def update
     if @product.update(product_params)
-      redirect_to root_path
+      redirect_to product_path
     else
       render :edit
     end

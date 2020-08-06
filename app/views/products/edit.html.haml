@@ -1,1 +1,133 @@
-= render "form"
+.sellHeader
+  .icon
+    = link_to image_tag('logo.png'), "/"
+  .sellMain
+    .sellContents
+      = form_with model: @product, class: "form", local: true do |f|
+        .sellContents__image
+          .sellContents__image__h
+            %label 出品画像
+            %span 必須
+            .formImage__text 最大5枚までアップロードできます
+            .imageBox
+              .previewBox
+                .previews
+                  - @product.images.each_with_index do |image, i|
+                    .imagePreview{id: "imagePreview__#{i}"}
+                      .upBox
+                        = image_tag image.src.url, alt: "preview", class: "upBox__image"
+                      .btnBox
+                        .edit
+                          %label.editBtn{for: "product_images_attributes_#{i}_src"} 編集
+                        .delete{id: "deleteBtn_#{i}"}
+                          削除
+                .uploadLabel
+                  = f.label :"images_attributes_#{@product.images.length}_src", class: "uploadLabel__box", id: "labelBox--#{@product.images.length}" do
+                    #dropArea
+                    = icon("fa", "camera", class: "labelIcon")
+                    %pre.uploadLabel__text
+                      クリックしてファイルをアップロード
+                .hidden
+                  = f.fields_for :images do |image|
+                    = image.file_field :src, class: "hiddenField"
+                    = image.check_box :_destroy, class: "hiddenCheckBox"
+                  - @product.images.length.upto(4) do |i|
+                    %input{class: "hiddenField", type: "file", name: "product[images_attributes][#{i}][src]", id: "product_images_attributes_#{i}_src"}
+        .sellContents__name
+          商品名 
+          %span 必須
+          .nameField
+            = f.text_field :name, class: "nameField__text", placeholder: "40文字まで", autofocus: true
+        .sellContents__discribe
+          商品の説明 
+          %span 必須
+          .discribeField
+            = f.text_area :discribe, class: "discribeField__text", rows: "7", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例：2019年頃に購入したサンダルです。黒色であわせやすいのでおすすめです。"
+        .sellContents__brand
+          ブランド名
+          %span 任意
+          .brandField
+            = f.text_field :brand, class: "brandField__text", placeholder: "例：エルメス"
+        .sellContents__status
+          商品の状態 
+          %span 必須
+          .statusField
+            = f.select :status, Product.statuses_i18n.invert, {prompt: '選択してください'}, class: "statusField__text"
+        .sellContents__category
+          カテゴリー
+          %span 必須
+          .categoryField
+            = f.collection_select :category_id, Category.all.limit(13), :id, :name, {prompt: '選択してください'}, class: "categoryField__text"
+        .sellContents__shipping
+          配送について
+          %ul.shippingLists
+            %li.shippingLists__cost
+              配送料の負担 
+              %span 必須
+              .costField
+                = f.select :shipping_cost, Product.shipping_costs_i18n.invert, {prompt: '選択してください'}, class: "costField__text"
+            %li.shippingLists__from
+              発送元の地域 
+              %span 必須
+              .fromField
+                = f.select :shipping_from, Product.shipping_froms_i18n.invert, {prompt: '選択してください'}, class: "fromField__text"
+            %li.shippingLists__days
+              発送までの日数 
+              %span 必須
+              .daysField
+                = f.select :days, Product.days_i18n.invert, {prompt: '選択してください'}, class: "daysField__text"
+        .sellContents__price
+          .priceHeader
+            販売価格（￥300〜￥9,999,999）
+          .priceLists
+            .priceLists__leftContents
+              %ul.priceTexts
+                %li.priceTexts__value
+                  価格
+                  %span 必須
+                %li.priceTexts__fee
+                  販売手数料（10%）
+                %li.priceTexts__profit
+                  販売利益
+            .priceLists__rightContents
+              %ul.priceField
+                %li.priceField__form
+                  %h1 ¥
+                  = f.number_field :price, class: "priceField__form--text"
+                %li.priceField__unit
+                %li.priceField__value
+              %ul.profitLists
+                %li.profitLists__unit
+                %li.profitLists__value
+        .sellContents__action
+          %div
+            = f.submit "更新する", class: 'sellButton'
+          %div
+            = link_to product_path do
+              商品詳細に戻る
+      .sellContents__consent
+        %p 
+        禁止されている
+        = link_to "行為", "#"
+        及び出品物を必ずご確認下さい。
+        %p 
+        = link_to "偽ブランド品", "#"
+        や
+        = link_to "盗品物", "#"
+        などの販売は犯罪であり、法律により処罰される可能性があります。
+        %p
+        また、出品をもちまして
+        = link_to "加盟店規約", "#"
+        に同意したことになります。
+  .sellFooter
+    %ul.box
+      %li.box__privacy
+        = link_to "プライバシーポリシー", "#"
+      %li.box__terms
+        = link_to "フリマ利用規約", "#"
+      %li.box__transaction
+        = link_to "特定商取引に関する表記", "#"
+    .icon
+      = link_to image_tag('logo.png'), "/"
+    .copyRight
+      © FURIMA, Inc. 
