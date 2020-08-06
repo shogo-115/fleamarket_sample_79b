@@ -70,7 +70,7 @@
             -else
               %ul.rightList
                 %li.rightList__item--login
-                  = link_to "#" do
+                  = link_to purchase_index_path(@product.id) do
                     購入する
         .commentBox
           -if user_signed_in? 
