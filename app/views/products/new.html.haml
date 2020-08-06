@@ -13,7 +13,7 @@
               .previewBox
                 .previews
                 .uploadLabel
-                  = f.label :"images_attributes_#{@product.images.length}_src", class: "uploadLabel__box", id: "labelBox--#{@product.images.length}" do
+                  %label{for: "product_images_attributes_0_src", class: "uploadLabel__box", id: "label-box--0"}
                     #dropArea
                     = icon("fa", "camera", class: "labelIcon")
                     %pre.uploadLabel__text
@@ -21,12 +21,10 @@
                 .hidden
                   = f.fields_for :images do |image|
                     = image.file_field :src, class: "hiddenField"
-                    = image.check_box :_destroy, class: "hiddenCheckBox"
-                  - @product.images.length.upto(4) do |i|
-                    %input{class: "hiddenField", type: "file", name: "product[images_attributes][#{i}][src]", id: "product_images_attributes_#{i}_src"}
-              - if @product.errors.include?(:images)
-                %p.errorMessage
-                  = @product.errors.full_message_for(:images).first
+                    %input{class:"hiddenField", type: "file", name: "product[images_attributes][1][src]", id: "product_images_attributes_1_src"}
+                    %input{class:"hiddenField", type: "file", name: "product[images_attributes][2][src]", id: "product_images_attributes_2_src"}
+                    %input{class:"hiddenField", type: "file", name: "product[images_attributes][3][src]", id: "product_images_attributes_3_src"}
+                    %input{class:"hiddenField", type: "file", name: "product[images_attributes][4][src]", id: "product_images_attributes_4_src"}
         .sellContents__name
           商品名 
           %span 必須
