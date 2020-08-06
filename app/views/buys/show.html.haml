@@ -6,13 +6,16 @@
     .buyContents__fildProduct
       .buyContents__fildProduct__area
         .buyContents__fildProduct__area--image
-          = image_tag 'sss.jpg', class: "image"
+          - @proImgs.each do |proImg|
+            = image_tag proImg.src.url, alt: "NoImage"
         .buyContents__fildProduct__area--price
-          商品名称
+          = @product.name
     .buyContents__fildc
       .buyContents__fildc--a
         %span 支払い金額  
-        %span ¥15,000
+        %span 
+          ¥
+          = @product.price.to_s(:delimited)
     .buyContents__fildd
       .buyContents__fildd--c
         %h3 支払い方法
@@ -35,7 +38,7 @@
         宛名:
         = @address.family_name
         = @address.first_name
-      = link_to "#" do
+      = link_to edit_address_path do
         ＋ 配送先を変更する
     .buyContents__fildf
       .buyContents__fildf--e

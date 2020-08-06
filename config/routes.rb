@@ -14,9 +14,11 @@ Rails.application.routes.draw do
   end
   root 'products#index'
   resources :products
-  resources :buys, only: :new
+  resources :buys, only: :show
   resources :users, only: :show
   get 'after_logout', to: 'users#logout'
+  get 'allProd', to: 'users#allProd'
+  get 'after_prodDlt', to: 'products#proDlt'
   delete 'user_delete', to: 'users#delete'
   resources :products do
     resources :comments, only: :create

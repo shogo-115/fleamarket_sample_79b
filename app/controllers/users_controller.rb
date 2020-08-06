@@ -6,5 +6,9 @@ class UsersController < ApplicationController
   
   def logout
   end
+
+  def allProd
+    @products = Product.where(user_id: current_user.id)
+  end
   
 end

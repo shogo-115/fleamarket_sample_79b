@@ -26,7 +26,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def update
     user = User.find(current_user.id)
     user.update(user_params)
-    render "products/index"
+    redirect_to user_path(current_user.id)  
   end
 
   def create_names
@@ -49,7 +49,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def update_names
     name = Name.find_by(user_id: current_user.id)
     name.update(name_params)
-    render "products/index"
+    redirect_to user_path(current_user.id)  
   end
 
   def create_address
@@ -64,6 +64,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user.build_address(@address.attributes)
     @user.save
     sign_in(:user, @user)
+    @products = Product.order('created_at DESC').limit(10)
+    @products = Product.includes(:images).order('created_at DESC').limit(10)
     render "products/index"
   end
 
@@ -74,7 +76,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def update_address
     address = Address.find_by(user_id: current_user.id)
     address.update(address_params)
-    render "products/index"
+    redirect_to user_path(current_user.id)  
   end
 
   protected

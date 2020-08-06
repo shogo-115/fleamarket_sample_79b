@@ -1,0 +1,18 @@
+.allprofMain{
+  background-color: #f8f8f8;
+  height: 100vh;
+  width: 100vw;
+  &__content{
+    padding:50px 50px;
+    &--header{
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: #3CCACE;
+      margin-bottom: 10px;
+    }
+    &--main{
+
+    }
+  }
+}

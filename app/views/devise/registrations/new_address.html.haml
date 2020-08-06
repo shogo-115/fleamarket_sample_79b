@@ -6,13 +6,13 @@
     = form_for @address do |f|
       = render "devise/shared/error_messages", resource: @address
       .userContents__fild
-        郵便番号
+        送付先 郵便番号
         %span 必須
         .inputarea
           %br/
           = f.text_field :postNo, autofocus: true, autocomplete: "postNo"
       .userContents__address
-        住所
+        送付先 住所
         %span 必須
         .inputarea
           = f.text_field :pref,placeholder: "都道府県",class: "addressInput"
