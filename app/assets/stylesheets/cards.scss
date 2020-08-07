@@ -1,0 +1,216 @@
+* {
+  box-sizing: border-box;
+}
+
+.cardMain{
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(245, 245, 245);
+  .icon{
+    text-align: center;
+    padding: 30px 0;
+    img{
+      width: 140px;
+      height: 40.55px;
+      vertical-align: bottom;
+    }
+  }
+  .cardContents{
+    width: 700px;
+    background-color: white;
+    margin: 0 auto;
+    &__title{
+      font-size: 25px;
+      font-weight: bold;
+      text-align: center;
+      padding: 30px;
+      border-bottom: lightgray solid 1px;
+    }
+    &__number{
+      font-weight: bold;
+      padding: 30px;
+      border-bottom: lightgray solid 1px;
+    }
+    span{
+      font-size: 13px;
+      font-weight: normal;
+      color: white;
+      background-color: red;
+      border-radius: 5px;
+      padding: 3px;
+    }
+    .numberField{
+      margin-top: 30px;
+      &__text{
+        width: 250px;
+        height: 48px;
+        font-weight: normal;
+        border: lightgray solid 1px;
+        border-radius: 5px;
+        padding: 0 16px;
+      }
+    }
+    &__deadline{
+      font-weight: bold;
+      padding: 30px;
+      border-bottom: lightgray solid 1px;
+    }
+    span{
+      font-size: 13px;
+      font-weight: normal;
+      color: white;
+      background-color: red;
+      border-radius: 5px;
+      padding: 3px;
+    }
+    .deadlineField{
+      margin-top: 30px;
+      &__text{
+        width: 100px;
+        height: 48px;
+        font-weight: normal;
+        border: lightgray solid 1px;
+        border-radius: 5px;
+        padding: 0 16px;
+      }
+    }
+    &__security{
+      font-weight: bold;
+      padding: 30px;
+      border-bottom: lightgray solid 1px;
+    }
+    span{
+      font-size: 13px;
+      font-weight: normal;
+      color: white;
+      background-color: red;
+      border-radius: 5px;
+      padding: 3px;
+    }
+    .securityField{
+      margin-top: 30px;
+      &__text{
+        width: 200px;
+        height: 48px;
+        font-weight: normal;
+        border: lightgray solid 1px;
+        border-radius: 5px;
+        padding: 0 16px;
+      }
+    }
+    &__action{
+      text-align: center;
+      .actionButton{
+        width: 200px;
+        height: 50px;
+        color: white;
+        font-size: 17px;
+        font-weight: bold;
+        background-color: red;
+        margin: 30px;
+        padding: 0 24px;
+        border-style: none;
+        border-radius: 10px;
+      }
+      .actionButton:hover{
+        background-color:red;
+        opacity: 0.7;
+      }
+      p{
+        padding-bottom: 30px;
+      }
+      a{
+        text-decoration: none;
+        color: black;
+      }
+      a:hover{
+        background-color: whitesmoke;
+        opacity: 0.7;
+      }
+    }
+    &__delete{
+      text-align: center;
+      button{
+        width: 200px;
+        height: 50px;
+        color: white;
+        font-size: 17px;
+        font-weight: bold;
+        background-color: red;
+        margin: 30px;
+        padding: 0 24px;
+        border-style: none;
+        border-radius: 10px;
+      }
+      button:hover{
+        background-color:red;
+        opacity: 0.7;
+      }
+      p{
+        padding-bottom: 30px;
+      }
+      a{
+        text-decoration: none;
+        color: black;
+      }
+      a:hover{
+        background-color: whitesmoke;
+        opacity: 0.7;
+      }
+    }
+  }
+  .cardFooter{
+    text-align: center;
+    .box{
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+      &__privacy{
+        font-size: 14px;
+        a{
+          text-decoration: none;
+          color: black;
+        }
+        a:hover{
+          background-color: whitesmoke;
+          opacity: 0.4;
+        }
+      }
+      &__terms{
+        font-size: 14px;
+        margin-left: 20px;
+        a{
+          text-decoration: none;
+          color: black;
+        }
+        a:hover{
+          background-color: whitesmoke;
+          opacity: 0.4;
+        }
+      }
+      &__transaction{
+        font-size: 14px;
+        margin-left: 20px;
+        a{
+          text-decoration: none;
+          color: black;
+        }
+        a:hover{
+          background-color: whitesmoke;
+          opacity: 0.4;
+        }
+      }
+    }
+    .icon{
+      padding-top: 30px;
+      img{
+        width: 140px;
+        height: 40.55px;
+        vertical-align: bottom;
+      }
+    }
+    .copyRight{
+      font-size: 12px;
+    }
+  }
+}
