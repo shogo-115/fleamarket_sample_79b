@@ -8,4 +8,6 @@ class User < ApplicationRecord
   has_one :name, dependent: :destroy
   has_many :comments
   has_many :products
+  has_many :favorites, dependent: :destroy
+  has_many :favorites, through: :favorites, source: :product
 end

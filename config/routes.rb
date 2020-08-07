@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   delete 'user_delete', to: 'users#delete'
   resources :products do
     resources :comments, only: :create
+    resources :favorites , only: [:index, :create, :destroy]
   end
   get 'newlook', to: 'newlooks#index'
   get 'women', to: 'womens#index'
