@@ -11,6 +11,9 @@
               %li.contentitem__list
                 - @proImgs.each do |proImg|
                   = image_tag proImg.src.url, alt: "NoImage"
+                -if @product.soldout == 1
+                  .soldout
+                    .soldout__inner SOLD
           .contentitem__price
             .contentitem__prices
               = @product.price
