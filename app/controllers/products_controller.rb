@@ -57,7 +57,6 @@ class ProductsController < ApplicationController
     @proImgs = @product.images
     @comment = Comment.new
     @comments = @product.comments
-    
   end
 
   def proDlt

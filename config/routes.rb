@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get 'proDlt', to: 'products#proDlt'
   resources :products do
     resources :comments, only: :create
+    resources :favorites , only: [:index, :create, :destroy]
   end
   get 'newlook', to: 'newlooks#index'
   resources :card, only: [:new, :show] do
