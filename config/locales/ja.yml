@@ -63,6 +63,13 @@ ja:
         maxTwo: "1〜2日で発送"
         maxThree: "2〜3日で発送"
         maxSeven: "4〜7日で発送" 
+  views:
+    pagination:
+      first: <i class="fas fa-angle-double-left"></i>
+      last: <i class="fas fa-angle-double-right"></i>
+      previous: <i class="fas fa-angle-left"></i>
+      next: <i class="fas fa-angle-right"></i>
+      truncate: "..."
   activerecord:
     models:
       product: 商品
