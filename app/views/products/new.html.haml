@@ -3,23 +3,29 @@
     = link_to image_tag('logo.png'), "/"
   .sellMain
     .sellContents
-      = form_with model: @product, class: "form", id: "product-form", local: true do |f|
+      = form_with model: @product, class: "form", local: true do |f|
         .sellContents__image
+          = render 'layouts/error_messages', model: f.object
           .sellContents__image__h
             %label 出品画像
             %span 必須
-            .formImage__text 最大10枚までアップロードできます
-            = f.fields_for :images do |image|
-              .imageBox
-                %ul#previews
-                  %li.input
-                    %label.uploadLabel
-                      .uploadLabel__text
-                        ドラッグアンドドロップ
-                        %br
-                        またはクリックしてファイルをアップロード
-                        .inputArea
-                          = image.file_field :src, class: "hidden imageUpload"
+            .formImage__text 最大5枚までアップロードできます
+            .imageBox
+              .previewBox
+                .previews
+                .uploadLabel
+                  %label{for: "product_images_attributes_0_src", class: "uploadLabel__box", id: "label-box--0"}
+                    #dropArea
+                    = icon("fa", "camera", class: "labelIcon")
+                    %pre.uploadLabel__text
+                      クリックしてファイルをアップロード
+                .hidden
+                  = f.fields_for :images do |image|
+                    = image.file_field :src, class: "hiddenField"
+                    %input{class:"hiddenField", type: "file", name: "product[images_attributes][1][src]", id: "product_images_attributes_1_src"}
+                    %input{class:"hiddenField", type: "file", name: "product[images_attributes][2][src]", id: "product_images_attributes_2_src"}
+                    %input{class:"hiddenField", type: "file", name: "product[images_attributes][3][src]", id: "product_images_attributes_3_src"}
+                    %input{class:"hiddenField", type: "file", name: "product[images_attributes][4][src]", id: "product_images_attributes_4_src"}
         .sellContents__name
           商品名 
           %span 必須
@@ -44,7 +50,7 @@
           カテゴリー
           %span 必須
           .categoryField
-            = f.collection_select :category_id, Category.all, :id, :name, {prompt: '選択してください'}, class: "categoryField__text"
+            = f.collection_select :category_id, Category.all.limit(13), :id, :name, {prompt: '選択してください'}, class: "categoryField__text"
         .sellContents__shipping
           配送について
           %ul.shippingLists
@@ -89,9 +95,9 @@
         .sellContents__action
           %div
             = f.submit "出品する", class: 'sellButton'
-          %div
-            = link_to root_url do
-              トップページに戻る
+        .sellContents__back
+          = link_to root_url do
+            トップページに戻る
               
       .sellContents__consent
         %p 

@@ -5,10 +5,13 @@ class Product < ApplicationRecord
   belongs_to :category, optional: true
 
   accepts_nested_attributes_for :images, allow_destroy: true
-  validates :name, :discribe, :status, :shipping_cost, :shipping_from, :days, presence: true
-  validates :name, length: {maximum: 40}
-  validates :discribe, length: {maximum: 1000}
-  validates :price, numericality: {greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999, message:"を300円から9999999円までの間で入力してください"}
+  
+
+  validates :name, :discribe, :status, :category, :shipping_cost, :shipping_from, :days, presence: true
+  validates :images, presence: {message:"を1枚以上追加してください"}
+  validates :name, length: {maximum: 40 , message:"を40文字以内で入力してください"}
+  validates :discribe, length: {maximum: 1000, message:"を1000文字以内で入力してください"}
+  validates :price, numericality: {greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999, message:"を300円から9,999,999円までの間で入力してください"}
 
   enum status: [:brandNew, :almostNew, :noDamage, :slightlyDamaged, :damaged, :bad]
 

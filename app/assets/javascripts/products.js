@@ -1,100 +1,111 @@
 $(document).on('turbolinks:load', function(){
-  $(document).on('click', '.imageUpload', function(){
-    var preview = $(`<div class="imagePreview__wrapper"><img class="preview"></div>
-                     <div class="imagePreviewBtn">
-                     <div class="imagePreviewBtnDelete">削除</div></div>`
-                    );
-    var append_input = $(`<li class="input"><label class="uploadLabel"><div class="uploadLabel__text">
-                          ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード<div class="inputArea">
-                          <input class="hidden imageUpload" type="file"></div></div></label></li>`
-                        )
-    $ul = $('#previews')
-    $li = $(this).parents('li');
-    $label = $(this).parents('.uploadLabel');
-    $inputs = $ul.find('.imageUpload');
-    $('.imageUpload').on('change', function (e) {
-      var reader = new FileReader();
-      reader.readAsDataURL(e.target.files[0]);
-      reader.onload = function(e){
-        $(preview).find('.preview').attr('src', e.target.result);
-      }
-      $li.append(preview);
-      $label.css('display','none');
-      $li.removeClass('input');
-      $li.addClass('imagePreview');
-      $lis = $ul.find('.imagePreview'); 
-      $('#previews li').css({
-        'width': `20%`
-      })
-      if($lis.length <= 4 ){
-        $ul.append(append_input)
-        $('#previews li:last-child').css({
-          'width': `calc(100% - (20% * ${$lis.length}))`
-        })
-      }
-      else if($lis.length == 5 ){
-        $li.addClass('imagePreview');
-        $ul.append(append_input)
-        $('#previews li:last-child').css({
-          'width': `100%`
-        })
-      }
-      else if($lis.length <= 9){
-        $li.addClass('imagePreview');
-        $ul.append(append_input)
-        $('#previews li:last-child').css({
-          'width': `calc(100% - (20% * (${$lis.length} - 5 )))`
-        })
-      }
-      $inputs.each(function(num, input){
-        $(input).removeAttr('src');
-        $(input).attr({
-          name:"product[images_attributes][" + num + "][src]",
-          src:"product[images_attributes][" + num + "][src]",
-          id:"product_images_attributes_" + num + "_src"
-        });
-      });
+  function buildHTML(id){
+    let html =`<div class="imagePreview" id="imagePreview__${id}">
+                <div class="upBox">
+                  <img src="" alt="preview">
+                </div>
+                <div class="btnBox">
+                  <div class="edit">
+                    <label for="product_images_attributes_${id}_src",class="editBtn">編集</label>
+                  </div>
+                  <div class="delete" id="deleteBtn_${id}">
+                    削除
+                  </div>
+                </div>
+              </div>`
+    return html;
+  }
+
+  function setLabel(){
+    let prevContent = $('.uploadLabel').prev().css('width');
+    let labelWidth = (640 - parseInt(prevContent));
+    $('.uploadLabel').css('width', labelWidth);
+    let count = $('.imagePreview').length;
+    if(count == 5){
+      $('.uploadLabel').hide();
+    }
+  }
+
+  const array = [0, 1, 2, 3, 4]
+  function diffArray(arr1, arr2){
+    return arr1.concat(arr2)
+    .filter(item => !arr1.includes(item) || !arr2.includes(item));
+  }
+  function diffPrev(){
+    let array_p = $('.imagePreview').map(function(index, element){
+      return parseInt($(element).attr("id").replace(/[^0-9]/g, ''));
     })
-  })
-  $(document).on('click','.imagePreviewBtnDelete',function(){
-    var append_input = $(`<li class="input"><label class="uploadLabel">
-                          <div class="uploadLabel__text">ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード
-                          <div class="inputArea"><input class"hidden imageUpload" type="file"></div></div></label></li>`
-                        )
-    $ul = $('#previews')
-    $lis = $ul.find('.imagePreview');
-    $input = $ul.find('.input');
-    $ul = $('#previews')
-    $li = $(this).parents('.imagePreview');
-    
-    $li.remove();
-    
-    $lis = $ul.find('.imagePreview');
-    $label = $ul.find('.input');
-    if($lis.length <= 4 ){
-      $('#previews li:last-child').css({
-        'width': `calc(100% - (20% * ${$lis.length}))`
-      })
+    array_id = $.makeArray(array_p)
+    let result = []
+    result = diffArray(array, array_id)
+    return result[0]
+  }
+    setLabel();
+  
+  if (!$(`#product_images_attributes_0__destroy`).length == 0){
+    for (let i = 0; i < 5; i++){
+      let num = String(i);
+      $(`#product_images_attributes_${num}__destroy`).prop('checked', false);
     }
-    else if($lis.length == 5 ){
-      $('#previews li:last-child').css({
-        'width': `100%`
-      })
+  }
+
+  if ($(".hiddenField").length > 5){
+    let yobun = $(".hiddenField").length - 5
+    for (let i = 0; i < yobun; i++){
+      $(".hiddenField").last().remove()
+
     }
-    else if($lis.length < 9 ){
-      $('#previews li:last-child').css({
-        'width': `calc(100% - (20% * (${$lis.length} - 5 )))`
-      })
+  };
+
+  $(document).on('change', '.hiddenField', function(){
+    let file = this.files[0];
+    let num = $(this).attr('id').replace(/[^0-9]/g, '');
+    let reader = new FileReader();
+    if($(`#product_images_attributes_${num}__destroy`).prop("checked")){
+      $(`#product_images_attributes_${num}__destroy`).prop('checked', false)
     }
-    else if($lis.length == 9 ){
-      $ul.append(append_input)
-      $('#previews li:last-child').css({
-        'width': `calc(100% - (20% * (${$lis.length} - 5 )))`
-      })
+    reader.readAsDataURL(file);
+    reader.onload = function(){
+      let image = this.result;
+      if ($(`#imagePreview__${num}`).length == 0){
+        let html = buildHTML(num);
+        let prevContent = $('.uploadLabel').prev();
+        $(prevContent).append(html);
+      }
+      $(`#imagePreview__${num} img`).attr({
+                                            src: `${image}`,
+                                            class: "upBox__image"
+                                          });
+      setLabel();
+      let id = diffPrev()
+      $('.uploadLabel__box').attr({id: `labelBox--${id}`, for: `product_images_attributes_${id}_src`});
     }
   });
+  $(document).on('click', '.delete', function(){
+    let num = parseInt($(this).attr('id').replace(/[^0-9]/g, ''));
+    $(`#imagePreview__${num}`).remove();
+    setLabel();
+    if ($(`#product_images_attributes_${num}__destroy`).length == 0){
+      $(`#product_images_attributes_${num}_src`).val("");
+      let count = $('.imagePreview').length;
+      if ( count == 4){
+        $('.uploadLabel').show();
+      }
+      setLabel();
+      let id = diffPrev()
+      $('.uploadLabel__box').attr({id: `labelBox--${id}`, for: `product_images_attributes_${id}_src`});
+    } else {
+      $(`#product_images_attributes_${num}__destroy`).prop('checked',true);
+        let count = $('.imagePreview').length;
+        if ( count == 4){
+          $('.uploadLabel').show();
+        }
+      setLabel();
+      let id = diffPrev()
+      $('.uploadLabel__box').attr({id: `labelBox--${id}`, for: `product_images_attributes_${id}_src`});
+    }
+  })
 
-  //利益計算機能//
   $(".priceField__form--text").on("input", function() {
 
     var input = $(".priceField__form--text").val();
