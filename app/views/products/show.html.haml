@@ -60,6 +60,10 @@
                     発送日の目安
                   .prodact__Introduction
                     = @product.days_i18n
+          .favorite
+            -if user_signed_in?
+              %ul#favoriteBtn
+                = render partial: 'layouts/favorite', locals: { product: @product}
           .react
             -if user_signed_in? && current_user.id == @product.user_id
               %ul.rightList
