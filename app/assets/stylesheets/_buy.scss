@@ -29,46 +29,41 @@
       }
     }
   }
-  &__fildc{
+  &__fildPrice{
     font-weight: bold;
     padding: 30px;
     border-bottom: lightgray solid 1px;
-    &--a{
+    &--text{
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 20px;
     }
   }
-  &__fildd{
+  &__fildCard{
     font-weight: bold;
     padding: 30px;
     border-bottom: lightgray solid 1px;
-    &--c{
+    &--info{
       h3{
       font-size: 16px;
       margin-bottom: 15px;
       font-weight: bold;
       }
-      p{
-        font-size: 12px;
-        margin-bottom: 15px;
-      }
     }
     a{
       font-size: 12px;
       text-decoration: none;
     }
   }
-  &__filde{
+  &__fildAddress{
     font-weight: bold;
     padding: 30px;
     border-bottom: lightgray solid 1px;
-    &--d{
-      font-size: 12px;
-      margin-bottom: 15px;
+    &--info{
       h3{
         font-size: 16px;
+        margin-bottom: 15px;
         font-weight: bold;
       }
     }
@@ -77,33 +72,30 @@
       text-decoration: none;
     }
   }
-  &__fildf{
+  &__fildSubmit{
     font-weight: bold;
     padding: 30px;
-    &--e{
-      p{
-        margin-bottom: 15px;
-      }
-    }
-    form{
-      display: flex;
-      justify-content: center;
-      .btn2{
-        width: 200px;
-        height: 50px;
-        color: white;
-        font-size: 17px;
-        font-weight: bold;
-        background-color: red;
-        margin-top: 20px;
-        padding: 0 24px;
-        border-style: none;
-        border-radius: 10px;
-        margin-bottom: 20px;
-      }
-      .btn2:hover{
-        background-color:red;
-        opacity: 0.7;
+    &--btn{
+      form{
+        display: flex;
+        justify-content: center;
+        button{
+          width: 200px;
+          height: 50px;
+          color: white;
+          font-size: 17px;
+          font-weight: bold;
+          background-color: red;
+          margin-top: 20px;
+          padding: 0 24px;
+          border-style: none;
+          border-radius: 10px;
+          margin-bottom: 20px;
+        }
+        button:hover{
+          background-color:red;
+          opacity: 0.7;
+        }
       }
     }
   }

@@ -1,0 +1,27 @@
+.cardMain
+  .icon
+    = link_to image_tag('logo.png'), root_path
+  .cardContents
+    .cardContents__title
+      登録クレジットカード情報確認・変更
+    .cardContents__number
+      %label カード番号
+      = "**** **** **** " + @default_card_information.last4
+    .cardContents__deadline
+      %label 有効期限
+      - exp_month = @default_card_information.exp_month.to_s
+      - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+      = exp_month + " / " + exp_year
+    .cardContents__delete
+      = form_tag(delete_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
+        %input{ type: "hidden", name: "card_id", value: "" }
+        %button 変更する
+        %p
+    .cardContents__delete
+      = form_tag(deleteData_path, method: :delete, id: 'charge-form',  name: "inputForm") do
+        %input{ type: "hidden", name: "card_id", value: "" }
+        %button 削除する
+        %p
+          = link_to root_url do
+            トップページに戻る
+  = render partial: "layouts/cardfooter"
