@@ -81,4 +81,53 @@
       }
     }
   }
+  .back{
+    font-size: 20px;
+    text-align: center;
+    a{
+      text-decoration: none;
+      color: black;
+    }
+    a:hover{
+      background-color: white;
+      opacity: 0.6;
+    }
+  }
+  .pagenation{
+    font-size: 28px;
+    text-align: center;
+    padding: 15px;
+    a{
+      text-decoration: none;
+      color: #3CCACE;
+    }
+    a:hover{
+      background-color: white;
+      opacity: 0.6;
+    }
+  }
+}
+.purchaseBtn{
+  width: 120px;
+  background: #3CCACE;
+  text-align: center;
+  border-radius: 4%;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+  &__text{
+    color: #fff;
+    display: block;
+    font-size: 18px;
+    text-decoration: none;
+    margin-bottom: 5px;
+  }
+  &__icon{
+    width: 60%;
+  }
+} 
+.purchaseBtn:hover{
+  opacity:0.7;
+  background-color:#3CCACE;
 }
