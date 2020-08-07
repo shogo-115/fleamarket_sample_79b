@@ -65,11 +65,16 @@
                     編集
                   = link_to "/products/#{@product.id}", method: :delete do
                     削除
+            -elsif @product.soldout == 1
+              %ul.rightList
+                %li.rightList__item--login
+                  完売しました！
             -else
               %ul.rightList
                 %li.rightList__item--login
-                  = link_to "#" do
+                  = link_to purchase_index_path(@product.id) do
                     購入する
+              
         .commentBox
           -if user_signed_in? 
             = form_with(model: [@product, @comment], local: true, id: "new_comment") do |f|
