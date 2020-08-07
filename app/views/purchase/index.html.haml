@@ -6,42 +6,52 @@
     .buyContents__fildProduct
       .buyContents__fildProduct__area
         .buyContents__fildProduct__area--image
-          = image_tag 'sss.jpg', class: "image"
+          - @proImgs.each do |proImg|
+            = image_tag proImg.src.url, alt: "NoImage"
         .buyContents__fildProduct__area--price
-          商品名:　
+          商品名：
           = @product.name
-    .buyContents__fildc
-      .buyContents__fildc--a
+    .buyContents__fildPrice
+      .buyContents__fildPrice--text
         %span 支払い金額  
         %span 
-        ¥
-        = @product.price
-    .buyContents__fildd
-      .buyContents__fildd--c
-        %h3 支払い方法
-        %p クレジットカード
-      = link_to "#" do
-        ＋ クレジットカードの登録内容の確認
-    .buyContents__filde
-      .buyContents__filde--d
+          ¥
+          = @product.price.to_s(:delimited)
+    .buyContents__fildCard
+      .buyContents__fildCard--info
+        %h3 支払いクレジットカード情報
+        .buyContents__fildCard--info--text
+          カード番号：　
+          = "**** **** **** " + @default_card_information.last4
+          %br
+          有効期限：　
+          - exp_month = @default_card_information.exp_month.to_s
+          - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+          = exp_month + " / " + exp_year
+        .cardContents__delete
+          = link_to delete_card_index_path do
+            ＋ カードを変更する
+    .buyContents__fildAddress
+      .buyContents__fildAddress--info
         %h3 配送先
-        %br
-        郵便番号:
-        = @address.postNo
-        %br
-        住所:
-        = @address.pref
-        = @address.city
-        = @address.block
-        = @address.building
-        %br
-        宛名:
-        = @address.family_name
-        = @address.first_name
-      = link_to "#" do
-        ＋ 配送先を変更する
-    .buyContents__fildf
-      .buyContents__fildf--e
+        .buyContents__fildAddress--info--text
+          郵便番号:
+          = @address.postNo
+          %br
+          住所:
+          = @address.pref
+          = @address.city
+          = @address.block
+          = @address.building
+          %br
+          宛名:
+          = @address.family_name
+          = @address.first_name
+        = link_to edit_address_path do
+          ＋ 配送先を変更する
+    .buyContents__fildSubmit
+      .buyContents__fildSubmit--btn
         = form_tag(action: :pay, method: :post, format:@product.id) do
           %button 購入する
+
   = render partial: "layouts/userfooter"

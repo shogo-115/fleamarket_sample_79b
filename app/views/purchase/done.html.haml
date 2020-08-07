@@ -1,3 +1,12 @@
-%h2 購入が完了しました！
-%p Apple MacBook Pro 13インチ
-%p ¥135,000(送料込み)
+= render partial: "layouts/header"
+
+.Logout
+  .Logout__room
+    .Logout__rooms
+      購入が完了しました
+
+    .btn
+      = link_to root_path do
+        トップページへ戻る
+
+= render partial: "layouts/footer"

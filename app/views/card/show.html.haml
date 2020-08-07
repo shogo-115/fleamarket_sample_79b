@@ -17,6 +17,11 @@
         %input{ type: "hidden", name: "card_id", value: "" }
         %button 変更する
         %p
+    .cardContents__delete
+      = form_tag(deleteData_path, method: :delete, id: 'charge-form',  name: "inputForm") do
+        %input{ type: "hidden", name: "card_id", value: "" }
+        %button 削除する
+        %p
           = link_to root_url do
             トップページに戻る
   .cardFooter
