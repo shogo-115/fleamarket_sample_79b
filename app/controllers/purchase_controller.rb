@@ -23,12 +23,13 @@ class PurchaseController < ApplicationController
     :amount => Product.find_by(id: params[:format]).price,
     :customer => card.customer_id,
     :currency => 'jpy'
-  )
-  redirect_to action: 'done' 
+    )
+    product = Product.find_by(id: params[:format])
+    product.update(:soldout => 1)
+    redirect_to action: 'done' 
   end
 
   def done
-    @product = Product.find_by(id: params[:format])
   end
 
 end
