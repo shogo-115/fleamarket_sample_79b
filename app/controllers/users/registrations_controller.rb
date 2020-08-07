@@ -64,9 +64,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user.build_address(@address.attributes)
     @user.save
     sign_in(:user, @user)
-    @products = Product.order('created_at DESC').limit(10)
-    @products = Product.includes(:images).order('created_at DESC').limit(10)
-    render "products/index"
+    redirect_to root_path
   end
 
   def edit_address
