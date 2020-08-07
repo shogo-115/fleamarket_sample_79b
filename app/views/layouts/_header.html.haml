@@ -2,7 +2,7 @@
   .contents
     .contents__main
       %h1.icon
-        = image_tag 'logo.png', alt: 'noImage'
+        = link_to image_tag('logo.png'), "/"
       .searchField
         %input{type: "text", class: "searchField__text", placeholder: "キーワードから探す"}
         %button{type: "submit"}
