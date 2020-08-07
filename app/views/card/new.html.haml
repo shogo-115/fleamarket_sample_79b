@@ -1,6 +1,6 @@
 .cardMain
   .icon
-    = link_to image_tag('logo.png'), "/"
+    = link_to image_tag('logo.png'), root_path
   .cardContents
     = form_tag(pay_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
       .cardContents__title
@@ -54,15 +54,4 @@
         %p
           = link_to root_url do
             トップページに戻る
-  .cardFooter
-    %ul.box
-      %li.box__privacy
-        = link_to "プライバシーポリシー", "#"
-      %li.box__terms
-        = link_to "フリマ利用規約", "#"
-      %li.box__transaction
-        = link_to "特定商取引に関する表記", "#"
-    .icon
-      = link_to image_tag('logo.png'), "/"
-    .copyRight
-      © FURIMA, Inc. 
+  = render partial: "layouts/cardfooter"
