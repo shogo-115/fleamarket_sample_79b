@@ -47,7 +47,7 @@ class ProductsController < ApplicationController
 
   def destroy
     product = Product.find(params[:id])
-    redirect_to after_prodDlt_path
+    redirect_to proDlt_path
   end
 
   def show
@@ -56,7 +56,6 @@ class ProductsController < ApplicationController
     @proImgs = @product.images
     @comment = Comment.new
     @comments = @product.comments
-    
   end
 
   def proDlt

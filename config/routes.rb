@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :users, only: :show
   get 'after_logout', to: 'users#logout'
   delete 'user_delete', to: 'users#delete'
+  get 'proDlt', to: 'products#proDlt'
   resources :products do
     resources :comments, only: :create
   end
