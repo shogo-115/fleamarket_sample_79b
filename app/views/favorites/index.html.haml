@@ -1,0 +1,35 @@
+= render partial: "layouts/header"
+
+.newlookMain
+  .newlookHeader
+    お気に入りの商品一覧
+  .productBox
+    .productLists
+      .productList
+        - @favorites.each do |favorite|
+          = link_to product_path(favorite.product.id) do
+            .productList--img
+              = image_tag favorite.product.images.first.src.url
+            .productList--body
+              %h3.name
+                = favorite.product.name
+              .details
+                %ul
+                  %li
+                    = favorite.product.price
+                    円
+                    %span (税込)
+                  %li
+                    = icon('fas', 'star', class:'likeIcon')
+                    0
+  .back
+    = link_to root_url do
+      トップページに戻る
+  .pagenation
+    = paginate @favorites
+  = link_to new_product_path do
+    .purchaseBtn
+      %span.purchaseBtn__text 出品する
+      = image_tag 'icon_camera.png', class:"purchaseBtn__icon" 
+
+= render partial: "layouts/footer"
