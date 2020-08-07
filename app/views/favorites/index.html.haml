@@ -10,6 +10,9 @@
           = link_to product_path(favorite.product.id) do
             .productList--img
               = image_tag favorite.product.images.first.src.url
+            -if favorite.product.soldout == 1
+              .soldout
+                .soldout__inner SOLD
             .productList--body
               %h3.name
                 = favorite.product.name
