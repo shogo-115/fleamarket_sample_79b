@@ -26,8 +26,8 @@
                     = icon('fas', 'star', class:'likeIcon')
                     0
   .back
-    = link_to root_url do
-      トップページに戻る
+    = link_to user_path(current_user.id) do
+      マイページに戻る
   .pagenation
     = paginate @favorites
   = link_to new_product_path do
