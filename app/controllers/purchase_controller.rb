@@ -7,12 +7,16 @@ class PurchaseController < ApplicationController
     @product = Product.find_by(id: params[:format])
     @proImgs = @product.images
     card = Card.where(user_id: current_user.id).first
-    if card.blank?
-      redirect_to controller: "card", action: "new"
+    if current_user.id == @product.user_id || @product.soldout == 1
+      redirect_to root_path
     else
-      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-      customer = Payjp::Customer.retrieve(card.customer_id)
-      @default_card_information = customer.cards.retrieve(card.card_id)
+      if card.blank?
+        redirect_to controller: "card", action: "new"
+      else
+        Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+        customer = Payjp::Customer.retrieve(card.customer_id)
+        @default_card_information = customer.cards.retrieve(card.card_id)
+      end
     end
   end
 
