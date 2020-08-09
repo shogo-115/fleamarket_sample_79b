@@ -23,7 +23,6 @@ Rails.application.routes.draw do
     resources :comments, only: :create
     resources :favorites , only: [:index, :create, :destroy]
   end
-  get 'newlook', to: 'newlooks#index'
   resources :card, only: [:new, :show] do
     collection do
       post 'show', to: 'card#show'
@@ -39,6 +38,7 @@ Rails.application.routes.draw do
       get 'done', to: 'purchase#done'
     end
   end
+  get 'newlook', to: 'newlooks#index'
   get 'women', to: 'womens#index'
   get 'men', to: 'mens#index'
   get 'camera', to: 'cameras#index'
