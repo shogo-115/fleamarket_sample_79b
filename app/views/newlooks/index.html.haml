@@ -1,5 +1,7 @@
 = render partial: "layouts/header"
-
+.breadHeader
+  - breadcrumb :newlooks
+  = breadcrumbs separator: " &rsaquo; "
 .newlookMain
   .newlookHeader
     新着商品の一覧
