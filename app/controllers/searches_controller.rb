@@ -2,7 +2,7 @@ class SearchesController < ApplicationController
   before_action :set_ransack
   
   def index
-    @products = @q.result(distinct: true).page(params[:page]).per(12).order('created_at DESC')
+    @products = @q.result(distinct: true).page(params[:page]).per(14).order('created_at DESC')
     if params[:q].present?
       @keyword = params[:q][:name_cont]
     else
