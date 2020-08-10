@@ -2,12 +2,13 @@
   .contents
     .contents__main
       %h1.icon
-        = image_tag 'logo.png', alt: 'noImage'
+        = link_to image_tag('logo.png', alt: 'noImage'), products_path
       .searchField
-        %input{type: "text", class: "searchField__text", placeholder: "キーワードから探す"}
-        %button{type: "submit"}
-          .searchField__icon
-            = image_tag 'icon-search 1.png'
+        = search_form_for(@q, url: searches_path) do |f|
+          = f.search_field :name_cont, class: 'form', placeholder: 'キーワードで探す', id: "form__box"
+          .searchButton
+            %button{type:'submit', class:'button'}
+              %i.fas.fa-search
     .contents__nav
       %ul.leftList
         %li.leftList__item--first

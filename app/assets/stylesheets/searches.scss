@@ -1,0 +1,89 @@
+.searchMain{
+  display: flex;
+  .detailSearch{
+    background-color: rgb(245, 245, 245);
+    width: 250px;
+    padding: 20px;
+    .sort{
+      height: 25px;
+      margin-bottom: 10px;
+    }
+    .searchForm{
+      font-size: 15px;
+      .detailTitle{
+        margin-bottom: 10px;
+      }
+      &__keyword{
+        margin-bottom: 10px;
+        &__text{
+          height: 25px;
+        }
+      }
+      &__brand{
+        margin-bottom: 10px;
+        &__text{
+          height: 25px;
+        }
+      }
+      &__category{
+        margin-bottom: 10px;
+        &__text{
+          height: 25px;
+        }
+      }
+      &__price{
+        margin-bottom: 10px;
+        &__text{
+          height: 25px;
+        }
+      }
+      &__status{
+        margin-bottom: 10px;
+      }
+      &__cost{
+        margin-bottom: 10px;
+      }
+      &__btn{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        .clear{
+          color: red;
+          background-color: deepskyblue;
+          text-decoration: none;
+          width: 70px;
+          padding-left: 12px;
+        }
+        .complete{
+          background-color: deepskyblue;
+          border-style: none;
+          width: 70px;
+        }
+      }
+    }
+  }
+  .result{
+    width: calc(100% - 250px);
+    .productBox{
+      font-size: 20px;
+      margin: 10px 20px;
+    }
+    .searchHead{
+      display: flex;
+      .productsList{
+        margin-left: 40px;
+        a{
+          text-decoration: none;
+          color: black;
+          .product{
+            text-decoration: none;
+          }
+          img{
+            height: 150px;
+            width: 150px;
+          }
+        }
+      }
+    }
+  }
+}

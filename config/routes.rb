@@ -22,4 +22,5 @@ Rails.application.routes.draw do
     resources :comments, only: :create
   end
   get 'newlook', to: 'newlooks#index'
+  resources :searches, only: :index
 end
