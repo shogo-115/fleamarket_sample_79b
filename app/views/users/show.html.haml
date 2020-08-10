@@ -38,7 +38,7 @@
             出品したアイテムはありません。
         - else
           .MYpageHeader__more
-            = link_to "もっと見る >", newlook_path
+            = link_to "もっと見る >", sold_path
           .MYroomBox
             .MYroomLists
               .MYroomList
@@ -71,7 +71,7 @@
             購入済のアイテムはありません。
         - else
           .MYpageHeader__more
-            = link_to "もっと見る >", newlook_path
+            = link_to "もっと見る >", bought_path
           .MYroomBox
             .MYroomLists
               .MYroomList
@@ -95,32 +95,6 @@
                             0
                         %p
                           (税込)
-
- 
-  
-  -# .MYRoom
-  -#   = @nick_name
-  -#   さんの部屋
-  -#   .Room
-  -#     .Room__list
-  -#       %h2.Room__item
-  -#         出品した商品
-  -#       %ul.Room__box
-  -#         %li.Room__images
-  -#           = image_tag @proImgs.src.url, alt: "NoImage"
-  -#         %ul.Room__Show
-  -#           %li.Room__date
-  -#             商品名　
-  -#             = @products.name
-  -#           %li.Room__date
-  -#             商品の状態　
-  -#             = @products.status_i18n
-  -#           %li.Room__date
-  -#             カテゴリー　
-  -#             = @products.category.name
-  -#           %li.Room__date
-  -#             ブランド　
-  -#             = @products.brand
 
 = render partial: "layouts/footer"
 
