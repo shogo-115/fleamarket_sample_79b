@@ -39,6 +39,25 @@
           width: 100%;
           vertical-align: bottom;
         }
+        .soldout{
+          border-top: 80px solid #ea352d ;
+          border-right: 80px solid transparent;
+          border-bottom: 80px solid transparent;
+          border-left: 80px solid #ea352d ;
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 0;
+          width: 0;
+          &__inner{
+            font-size: 30px;
+            transform: rotate(-45deg);
+            margin:-35px 0px 0px -55px;
+            color: #fff;
+            letter-spacing: 2px;
+            font-weight: 600;
+          }
+        }
           &__pictures{
             display: flex;
             justify-content: center;

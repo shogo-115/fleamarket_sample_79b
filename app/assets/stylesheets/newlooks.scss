@@ -1,3 +1,15 @@
+.breadHeader{
+  padding-left: 10px;
+  padding-bottom: 10px;
+   a{
+     text-decoration: none;
+     color: black;
+   }
+   a:hover{
+     background-color: cornflowerblue;
+     opacity: 0.6;
+   }
+}
 .newlookMain{
   background-color: #f8f8f8;
   .newlookHeader{
@@ -15,7 +27,7 @@
       }
       .productList{
         background-color: #f8f8f8;
-        width: 1300px;
+        width: 100%;
         margin: 0 auto;
         a{
           background-color: white;
@@ -44,6 +56,25 @@
             z-index: auto;
             height: 150px;
             object-fit: cover;
+          }
+        }
+        .soldout{
+          border-top: 60px solid #ea352d ;
+          border-right: 60px solid transparent;
+          border-bottom: 60px solid transparent;
+          border-left: 60px solid #ea352d ;
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 0;
+          width: 0;
+          &__inner{
+            font-size: 20px;
+            transform: rotate(-45deg);
+            margin:-35px 0px 0px -55px;
+            color: #fff;
+            letter-spacing: 2px;
+            font-weight: 600;
           }
         }
         &--body{

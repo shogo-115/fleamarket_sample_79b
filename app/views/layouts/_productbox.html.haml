@@ -5,6 +5,9 @@
         = link_to product do
           .productList--img
             = image_tag product.images.first.src.url
+          -if product.soldout == 1
+            .soldout
+              .soldout__inner SOLD
           .productList--body
             %h3.name
               = product.name

@@ -1,4 +1,7 @@
 = render partial: "layouts/header"
+.breadHeader
+  - breadcrumb :mypage
+  = breadcrumbs separator: " &rsaquo; "
 .Wrapper
   .Link
     %h3.Link__page
@@ -9,6 +12,7 @@
       %li.Link__list
         = link_to "#", class: "menu_item" do
           購入した商品
+        = link_to "お気に入りの商品", product_favorites_path(:product_id)
       %h3.Link__page
         設定
       %ul.Link__item 

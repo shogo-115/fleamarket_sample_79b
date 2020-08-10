@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:edit, :update, :destroy, :show]
 
   def index
+    @product = Product.all
     @products = Product.order('created_at DESC').limit(10)
     @products = Product.includes(:images).order('created_at DESC').limit(10)
   end
@@ -46,6 +47,7 @@ class ProductsController < ApplicationController
 
   def destroy
     product = Product.find(params[:id])
+    product.destroy
     redirect_to proDlt_path
   end
 
