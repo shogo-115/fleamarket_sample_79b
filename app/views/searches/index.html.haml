@@ -29,17 +29,22 @@
           %br
           = f.radio_button :status_eq, ""
           指定なし
+          %br
           = f.radio_button :status_eq, 0
           新品、未使用
+          %br
           = f.radio_button :status_eq, 1
           未使用に近い
+          %br
           = f.radio_button :status_eq, 2
           目立った傷や汚れなし
           %br
           = f.radio_button :status_eq, 3
           やや傷や汚れあり
+          %br
           = f.radio_button :status_eq, 4
           傷や汚れあり
+          %br
           = f.radio_button :status_eq, 5
           全体的に状態が悪い
         .searchForm__cost
@@ -47,8 +52,10 @@
           %br
           = f.radio_button :shipping_cost_eq, ""
           指定なし
+          %br
           = f.radio_button :shipping_cost_eq, 0
           送料込み（出品者負担）
+          %br
           = f.radio_button :shipping_cost_eq, 1
           着払い（購入者負担）
         .searchForm__btn
@@ -74,4 +81,13 @@
                 = product.name
               .product__price
                 ¥#{product.price}
+.back
+  = link_to root_url do
+    トップページに戻る
+.pagenation
+  = paginate @products
+= link_to new_product_path do
+  .purchaseBtn
+    %span.purchaseBtn__text 出品する
+    = image_tag 'icon_camera.png', class:"purchaseBtn__icon" 
 = render partial: "layouts/footer"

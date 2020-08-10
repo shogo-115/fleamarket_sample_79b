@@ -63,15 +63,16 @@
     }
   }
   .result{
-    width: calc(100% - 250px);
     .productBox{
       font-size: 20px;
       margin: 10px 20px;
     }
     .searchHead{
       display: flex;
+      flex-wrap: wrap;
       .productsList{
         margin-left: 40px;
+        margin-bottom: 20px;
         a{
           text-decoration: none;
           color: black;
@@ -85,5 +86,30 @@
         }
       }
     }
+  }
+}
+.back{
+  font-size: 20px;
+  text-align: center;
+  a{
+    text-decoration: none;
+    color: black;
+  }
+  a:hover{
+    background-color: white;
+    opacity: 0.6;
+  }
+}
+.pagenation{
+  font-size: 28px;
+  text-align: center;
+  padding: 15px;
+  a{
+    text-decoration: none;
+    color: #3CCACE;
+  }
+  a:hover{
+    background-color: white;
+    opacity: 0.6;
   }
 }
