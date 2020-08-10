@@ -44,4 +44,6 @@ Rails.application.routes.draw do
   get 'men', to: 'mens#index'
   get 'camera', to: 'cameras#index'
   get 'hobby', to: 'hobbies#index'
+  get 'sold', to: 'sold#index'
+  get 'bought', to: 'bought#index'
 end
