@@ -32,6 +32,5 @@ yarn-debug.log*
 
 .DS_Store
 
-/public/uploads*
-.env
 public/uploads*
+.env
