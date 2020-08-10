@@ -15,8 +15,8 @@
 }
 
 .Link{
-  width: 400px;
-  margin: 30px auto 0;
+  width: 250px;
+  margin: 5px 15px 20px;
   &__page{
     font-size: 20px;
   }
@@ -41,62 +41,203 @@
   }
 }
 
-.MYRoom{
+.MYPAGE{
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0;
-  margin-bottom: 0;
-  max-width: 900px;
 }
-
-.Room {
-  margin: 20px 0;
-  padding: 30px;
-  position: relative;
-  height: auto;
-  background-size: cover;
-  background-position: center center;
-  border-radius: 3px;
-  box-shadow: 0 0 10px rgba(41,41,41,0.2);
-  &__list{
-    margin: 10px 0 0;
-    background: #fff;
-  }
-  &__item{
-    padding: 0 16px;
-    background: #fafafa;
-    font-size: 20px;
-    line-height: 72px;
-  }
-  &__box{
-    display: flex;
-  }
-  &__images{
-    margin: 20px 0;
-    padding: 30px;
-    box-shadow: 0 0 10px rgba(41,41,41,0.2);
-    background-color: whitesmoke;
-    box-sizing: border-box;
-    width: 50%;
-    img{
-      width: 100%;
-      height: 100%;
+.MYpageContents:last-child{
+  padding-bottom: 0px;
+}
+.MYpageContents{
+  padding: 5px 0 0;
+  background-color: #f8f8f8;
+  height: 47%;
+  width: 100%;
+  float: none;
+  margin-bottom: 10px;
+  .MYpageHeader{
+    text-align: center;
+    &__title{
+      color: #3CCACE;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    &__more{
+      a{
+        font-size: 18px;
+        text-decoration: none;
+        color: black;
+      }
+      a:hover{
+        background-color: whitesmoke;
+        opacity: 0.5;
+      }
     }
   }
-  &__Show{
-    margin: 20px 0;
-  padding: 30px;
-  box-shadow: 0 0 10px rgba(41,41,41,0.2);
-  background-color: whitesmoke;
-  box-sizing: border-box;
-  width: 50%;
+  .MYroomBox{
+    .MYroomLists{
+      margin: 25px;
+      display: flex;
+      overflow-y: hidden;
+      overflow-x: scroll;
+      a{
+        text-decoration: none;
+        position: relative;
+      }
+      .MYroomList{
+        background-color: #f8f8f8;
+        display:inline-flex;
+        justify-content:center;
+        a{
+          background-color: white;
+          display: inline-block;
+          border-style: none;
+          margin: 15px;
+          box-shadow: 7px 7px 10px 5px lightgray;
+        }
+        a:hover{
+          opacity:0.7;
+        }
+        a:hover{
+          opacity:0.7;
+        }
+        &--img{
+          width: 220px;
+          height: 150px;
+          position: relative;
+          overflow: hidden;
+          margin: 0;
+          z-index: auto;
+          img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            z-index: auto;
+            height: 150px;
+            object-fit: cover;
+          }
+        }
+        .soldout{
+          border-top: 60px solid #ea352d ;
+          border-right: 60px solid transparent;
+          border-bottom: 60px solid transparent;
+          border-left: 60px solid #ea352d ;
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 0;
+          width: 0;
+          &__inner{
+            font-size: 20px;
+            transform: rotate(-45deg);
+            margin:-35px 0px 0px -55px;
+            color: #fff;
+            letter-spacing: 2px;
+            font-weight: 600;
+          }
+        }
+        &--body{
+          background-color: white;
+          color: #333;
+          padding: 16px;
+          .name{
+            overflow: hidden;
+            line-height: 1.5;
+            font-size: 16px;
+            text-align: left;
+          }
+          .details{
+            font-size: 16px;
+            ul{
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              .likeIcon{
+                display: inline-block;
+                font: normal normal normal 14px/1;
+                font-size: inherit;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+              }
+              .likeIcon::before{
+                content: "\f005";
+              }
+            }
+            p{
+              font-size: 10px;
+              text-align: left;
+            }
+          }
+        }
+      }
+    }
   }
-  &__date{
-  width: 90%;
-  margin: 0 0 40px;
-  padding: 20px;
-  border: 1px solid #D8D8D8;
-  border-radius: 5px;
- }
 }
+
+.NOmypage{
+  margin-top: 30px;
+  font-size: 40px;
+}
+
+
+// .MYRoom{
+//   width: 100%;
+//   margin-left: auto;
+//   margin-right: auto;
+//   margin-top: 0;
+//   margin-bottom: 0;
+//   max-width: 900px;
+// }
+
+// .Room {
+//   margin: 20px 0;
+//   padding: 30px;
+//   position: relative;
+//   height: auto;
+//   background-size: cover;
+//   background-position: center center;
+//   border-radius: 3px;
+//   box-shadow: 0 0 10px rgba(41,41,41,0.2);
+//   &__list{
+//     margin: 10px 0 0;
+//     background: #fff;
+//   }
+//   &__item{
+//     padding: 0 16px;
+//     background: #fafafa;
+//     font-size: 20px;
+//     line-height: 72px;
+//   }
+//   &__box{
+//     display: flex;
+//   }
+//   &__images{
+//     margin: 20px 0;
+//     padding: 30px;
+//     box-shadow: 0 0 10px rgba(41,41,41,0.2);
+//     background-color: whitesmoke;
+//     box-sizing: border-box;
+//     width: 50%;
+//     img{
+//       width: 100%;
+//       height: 100%;
+//     }
+//   }
+//   &__Show{
+//     margin: 20px 0;
+//   padding: 30px;
+//   box-shadow: 0 0 10px rgba(41,41,41,0.2);
+//   background-color: whitesmoke;
+//   box-sizing: border-box;
+//   width: 50%;
+//   }
+//   &__date{
+//   width: 90%;
+//   margin: 0 0 40px;
+//   padding: 20px;
+//   border: 1px solid #D8D8D8;
+//   border-radius: 5px;
+//  }
+// }
