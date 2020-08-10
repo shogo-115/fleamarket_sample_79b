@@ -1,4 +1,4 @@
-.cardMain
+.cardEMain
   .icon
     = link_to image_tag('logo.png'), root_path
   .cardContents
@@ -16,12 +16,10 @@
       = form_tag(delete_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
         %input{ type: "hidden", name: "card_id", value: "" }
         %button 変更する
-        %p
-    .cardContents__delete
       = form_tag(deleteData_path, method: :delete, id: 'charge-form',  name: "inputForm") do
         %input{ type: "hidden", name: "card_id", value: "" }
         %button 削除する
-        %p
-          = link_to root_url do
-            トップページに戻る
+    .cardContents__top
+      = link_to root_url do
+        トップページに戻る
   = render partial: "layouts/cardfooter"

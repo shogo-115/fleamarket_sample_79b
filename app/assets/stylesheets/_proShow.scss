@@ -59,6 +59,22 @@
                 vertical-align: bottom;
               }
             }
+              &__shot{
+                display: flex;
+                justify-content: center;
+                margin-top: 10px;
+              }
+              &__shot--text{
+                width: 65%;
+                margin: 0 10px 0 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                img{
+                  object-fit: cover;
+                  height: 87px;
+                }
+              }
             &__price{
               margin: 24px 0 24px;
               text-align: center;
@@ -160,15 +176,15 @@
     margin-bottom: 20px;
   }
   .commentRoom{
-    padding: 24px;
+    padding: 12px;
     background-color: #fff;
     margin: 20px 0;
   }
   .commentpoint{
-    float: left;
+    text-align: left;
   }
   .commenttext{
-    float: left;
+    text-align: left;
     
   }
 }

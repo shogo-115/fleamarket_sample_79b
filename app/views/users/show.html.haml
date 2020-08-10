@@ -4,11 +4,11 @@
     %h3.Link__page
     %ul.Link__item
       %li.Link__list
-        = link_to "#" do
-          購入した商品
-      %li.Link__list
-        = link_to "#" do
+        = link_to "#", class: "menu_item active" do
           出品した商品
+      %li.Link__list
+        = link_to "#", class: "menu_item" do
+          購入した商品
       %h3.Link__page
         設定
       %ul.Link__item 
@@ -36,19 +36,23 @@
     .Room
       .Room__list
         %h2.Room__item
-          購入した商品
+          出品した商品
         %ul.Room__box
           %li.Room__images
-            写真
+            = image_tag @proImgs.src.url, alt: "NoImage"
           %ul.Room__Show
             %li.Room__date
-              購入日
+              商品名　
+              = @products.name
             %li.Room__date
-              商品名
+              商品の状態　
+              = @products.status_i18n
             %li.Room__date
-              ブランド名
+              カテゴリー　
+              = @products.category.name
             %li.Room__date
-              サイズ
-
+              ブランド　
+              = @products.brand
 
 = render partial: "layouts/footer"
+
