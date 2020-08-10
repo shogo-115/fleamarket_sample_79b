@@ -39,6 +39,7 @@ Rails.application.routes.draw do
     end
   end
   get 'newlook', to: 'newlooks#index'
+  resources :searches, only: :index
   get 'women', to: 'womens#index'
   get 'men', to: 'mens#index'
   get 'camera', to: 'cameras#index'

@@ -1,0 +1,77 @@
+= render partial: "layouts/header"
+.searchMain
+  .detailSearch
+    = search_form_for(@q, url: searches_path) do |f|
+      = f.select(:sorts, {'並び替え': 'id desc', '価格の安い順': 'price asc', '価格の高い順': 'price desc', '出品の古い順': 'updated_at asc', '出品の新しい順': 'updated_at desc'}, {onchange: 'this.form.submit()'}, class: "sort")
+      .searchForm
+        .detailTitle
+          詳細検索
+        .searchForm__keyword
+          キーワードを追加する
+          %br
+          = f.search_field :name_cont, placeholder: "例) 値下げ", class: "searchForm__keyword__text"
+        .searchForm__brand
+          ブランド名
+          %br
+          = f.search_field :brand_cont, class: "searchForm__brand__text", placeholder: "例：エルメス"
+        .searchForm__category
+          カテゴリー
+          %br
+          = f.collection_select :category_id_eq, Category.all.limit(13), :id, :name, {include_blank: '指定なし'}, class: 'searchForm__category__text'
+        .searchForm__price
+          価格
+          %br
+          = f.search_field :price_gteq, placeholder: "¥ Min", class: "searchForm__price__text"
+          %p 〜
+          = f.search_field :price_lteq, placeholder: "¥ Max", class: "searchForm__price__text"
+        .searchForm__status
+          商品の状態を指定する
+          %br
+          = f.radio_button :status_eq, ""
+          指定なし
+          = f.radio_button :status_eq, 0
+          新品、未使用
+          = f.radio_button :status_eq, 1
+          未使用に近い
+          = f.radio_button :status_eq, 2
+          目立った傷や汚れなし
+          %br
+          = f.radio_button :status_eq, 3
+          やや傷や汚れあり
+          = f.radio_button :status_eq, 4
+          傷や汚れあり
+          = f.radio_button :status_eq, 5
+          全体的に状態が悪い
+        .searchForm__cost
+          配送料の負担 
+          %br
+          = f.radio_button :shipping_cost_eq, ""
+          指定なし
+          = f.radio_button :shipping_cost_eq, 0
+          送料込み（出品者負担）
+          = f.radio_button :shipping_cost_eq, 1
+          着払い（購入者負担）
+        .searchForm__btn
+          = link_to "クリア", searches_path, class: "clear"
+          = f.submit "検索", class: "complete"
+  .result
+    .productBox
+      - if @keyword == ""
+        = "検索キーワードがありません"
+      - elsif @products.present?
+        = "#{@keyword} の検索結果: 1~#{@products.count}件表示"
+      - else
+        = "検索に一致する商品はありません"
+    .searchHead
+      - @products.each do |product|
+        .productsList
+          = link_to product_path(@products) do
+            .product
+              .product__image
+                - if product.images.present?
+                  = link_to image_tag("#{product.images[0].src}"), product_path(product.id)
+              .product__text
+                = product.name
+              .product__price
+                ¥#{product.price}
+= render partial: "layouts/footer"

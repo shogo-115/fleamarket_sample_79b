@@ -28,4 +28,12 @@ class Product < ApplicationRecord
     :miyazaki, :kagoshima , :okinawa]
 
   enum days:[:maxTwo, :maxThree, :maxSeven]
+
+  def self.search(search)
+    if search
+      Product.where('products.name LIKE(?)', "%#{search}%")
+    else
+      Product.all
+    end
+  end
 end
