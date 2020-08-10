@@ -102,9 +102,9 @@
         .sellContents__action
           %div
             = f.submit "更新する", class: 'sellButton'
-          %div
-            = link_to product_path do
-              商品詳細に戻る
+        .sellContents__back
+          = link_to product_path do
+            商品詳細に戻る
       .sellContents__consent
         %p 
         禁止されている

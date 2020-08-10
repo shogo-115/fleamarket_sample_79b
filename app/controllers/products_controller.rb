@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
   before_action :set_ransack
   
   def index
+    @product = Product.all
     @products = Product.order('created_at DESC').limit(10)
     @products = Product.includes(:images).order('created_at DESC').limit(10)
   end
@@ -46,13 +47,15 @@ class ProductsController < ApplicationController
 
   def destroy
     product = Product.find(params[:id])
-    redirect_to after_prodDlt_path
+    product.destroy
+    redirect_to proDlt_path
   end
 
   def show
     @producter = @product.user
     @categorie = @product.category
     @proImgs = @product.images
+    @proImge = @proImgs.first
     @comment = Comment.new
     @comments = @product.comments
   end

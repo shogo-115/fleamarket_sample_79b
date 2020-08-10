@@ -1,0 +1,31 @@
+.productBox
+  .productLists
+    .productList
+      - @products.each do |product|
+        = link_to product do
+          .productList--img
+            = image_tag product.images.first.src.url
+          -if product.soldout == 1
+            .soldout
+              .soldout__inner SOLD
+          .productList--body
+            %h3.name
+              = product.name
+            .details
+              %ul
+                %li
+                  = product.price
+                  円
+                  %span (税込)
+                %li
+                  = icon('fas', 'star', class:'likeIcon')
+                  0
+.back
+  = link_to root_url do
+    トップページに戻る
+.pagenation
+  = paginate @products
+= link_to new_product_path do
+  .purchaseBtn
+    %span.purchaseBtn__text 出品する
+    = image_tag 'icon_camera.png', class:"purchaseBtn__icon" 

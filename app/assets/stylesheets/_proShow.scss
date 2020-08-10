@@ -39,6 +39,25 @@
           width: 100%;
           vertical-align: bottom;
         }
+        .soldout{
+          border-top: 80px solid #ea352d ;
+          border-right: 80px solid transparent;
+          border-bottom: 80px solid transparent;
+          border-left: 80px solid #ea352d ;
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 0;
+          width: 0;
+          &__inner{
+            font-size: 30px;
+            transform: rotate(-45deg);
+            margin:-35px 0px 0px -55px;
+            color: #fff;
+            letter-spacing: 2px;
+            font-weight: 600;
+          }
+        }
           &__pictures{
             display: flex;
             justify-content: center;
@@ -59,6 +78,22 @@
                 vertical-align: bottom;
               }
             }
+              &__shot{
+                display: flex;
+                justify-content: center;
+                margin-top: 10px;
+              }
+              &__shot--text{
+                width: 65%;
+                margin: 0 10px 0 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                img{
+                  object-fit: cover;
+                  height: 87px;
+                }
+              }
             &__price{
               margin: 24px 0 24px;
               text-align: center;
@@ -160,15 +195,15 @@
     margin-bottom: 20px;
   }
   .commentRoom{
-    padding: 24px;
+    padding: 12px;
     background-color: #fff;
     margin: 20px 0;
   }
   .commentpoint{
-    float: left;
+    text-align: left;
   }
   .commenttext{
-    float: left;
+    text-align: left;
     
   }
 }

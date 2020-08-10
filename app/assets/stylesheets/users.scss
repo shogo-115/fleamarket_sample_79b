@@ -1,6 +1,6 @@
 .userMain{
   background-color: rgb(245, 245, 245);
-  height: 100vh;
+  height: auto;
   .userHeader{
     text-align: center;
     .icon{
@@ -212,5 +212,263 @@
     font-size: 15px;
     margin-top: 10px;
     margin-left: 80px;
+  }
+}
+
+.userEMain{
+  background-color: rgb(245, 245, 245);
+  height: 100vh;
+  .userHeader{
+    text-align: center;
+    .icon{
+      padding: 30px 0;
+      img{
+        width: 140px;
+        height: 40.55px;
+        vertical-align: bottom;
+      }
+    }
+  }
+  
+  .userContents{
+    width: 700px;
+    background-color: white;
+    margin: 0 auto;
+    &__fild{
+      font-weight: bold;
+      padding: 30px;
+      border-bottom: lightgray solid 1px;
+      span{
+        font-size: 13px;
+        font-weight: normal;
+        color: white;
+        background-color: red;
+        border-radius: 5px;
+        padding: 3px;
+      }
+      .inputarea{
+        margin-top: 30px;
+        input{
+          width: 620px;
+          height: 48px;
+          font-weight: normal;
+          border: lightgray solid 1px;
+          border-radius: 5px;
+          padding: 0 16px;
+        }
+      }
+    }
+    &__action{
+      text-align: center;
+      .userButton{
+        width: 200px;
+        height: 50px;
+        color: white;
+        font-size: 17px;
+        font-weight: bold;
+        background-color: red;
+        margin-top: 20px;
+        padding: 0 24px;
+        border-style: none;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+      .userButton:hover{
+        background-color:red;
+        opacity: 0.7;
+      }
+    }
+    &__consent{
+      font-size: 14px;
+      text-align: center;
+      padding: 30px 0;
+      a{
+        text-decoration: none;
+        color:#0095ee;
+      }
+    }
+  }
+  .userFooter{
+    text-align: center;
+    .box{
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+      &__privacy{
+        font-size: 14px;
+        a{
+          text-decoration: none;
+          color: black;
+        }
+        a:hover{
+          background-color: whitesmoke;
+          opacity: 0.4;
+        }
+      }
+      &__terms{
+        font-size: 14px;
+        margin-left: 20px;
+        a{
+          text-decoration: none;
+          color: black;
+        }
+        a:hover{
+          background-color: whitesmoke;
+          opacity: 0.4;
+        }
+      }
+      &__transaction{
+        font-size: 14px;
+        margin-left: 20px;
+        a{
+          text-decoration: none;
+          color: black;
+        }
+        a:hover{
+          background-color: whitesmoke;
+          opacity: 0.4;
+        }
+      }
+    }
+    .icon{
+      padding-top: 30px;
+      img{
+        width: 140px;
+        height: 40.55px;
+        vertical-align: bottom;
+      }
+    }
+    .copyRight{
+      font-size: 12px;
+    }
+  }
+}
+
+.userLMain{
+  background-color: rgb(245, 245, 245);
+  height: 100vh;
+  .userHeader{
+    text-align: center;
+    .icon{
+      padding: 30px 0;
+      img{
+        width: 140px;
+        height: 40.55px;
+        vertical-align: bottom;
+      }
+    }
+  }
+  
+  .userContents{
+    width: 700px;
+    background-color: white;
+    margin: 0 auto;
+    &__fild{
+      font-weight: bold;
+      padding: 30px;
+      border-bottom: lightgray solid 1px;
+      span{
+        font-size: 13px;
+        font-weight: normal;
+        color: white;
+        background-color: red;
+        border-radius: 5px;
+        padding: 3px;
+      }
+      .inputarea{
+        margin-top: 30px;
+        input{
+          width: 620px;
+          height: 48px;
+          font-weight: normal;
+          border: lightgray solid 1px;
+          border-radius: 5px;
+          padding: 0 16px;
+        }
+      }
+    }
+    &__action{
+      text-align: center;
+      .userButton{
+        width: 200px;
+        height: 50px;
+        color: white;
+        font-size: 17px;
+        font-weight: bold;
+        background-color: red;
+        margin-top: 20px;
+        padding: 0 24px;
+        border-style: none;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+      .userButton:hover{
+        background-color:red;
+        opacity: 0.7;
+      }
+    }
+    &__consent{
+      font-size: 14px;
+      text-align: center;
+      padding: 30px 0;
+      a{
+        text-decoration: none;
+        color:#0095ee;
+      }
+    }
+  }
+  .userFooter{
+    text-align: center;
+    .box{
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+      &__privacy{
+        font-size: 14px;
+        a{
+          text-decoration: none;
+          color: black;
+        }
+        a:hover{
+          background-color: whitesmoke;
+          opacity: 0.4;
+        }
+      }
+      &__terms{
+        font-size: 14px;
+        margin-left: 20px;
+        a{
+          text-decoration: none;
+          color: black;
+        }
+        a:hover{
+          background-color: whitesmoke;
+          opacity: 0.4;
+        }
+      }
+      &__transaction{
+        font-size: 14px;
+        margin-left: 20px;
+        a{
+          text-decoration: none;
+          color: black;
+        }
+        a:hover{
+          background-color: whitesmoke;
+          opacity: 0.4;
+        }
+      }
+    }
+    .icon{
+      padding-top: 30px;
+      img{
+        width: 140px;
+        height: 40.55px;
+        vertical-align: bottom;
+      }
+    }
+    .copyRight{
+      font-size: 12px;
+    }
   }
 }

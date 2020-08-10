@@ -9,11 +9,18 @@
           .contentitem__body
             %ul.contentitem__picture
               %li.contentitem__list
-                - @proImgs.each do |proImg|
-                  = image_tag proImg.src.url, alt: "NoImage"
+                = image_tag @proImge.src.url, alt: "NoImage"
+                %ul.contentitem__shot
+                  - @proImgs.each do |proImg|
+                    %li.contentitem__shot--text
+                      = image_tag proImg.src.url, alt: "NoImage"
+                -if @product.soldout == 1
+                  .soldout
+                    .soldout__inner SOLD
           .contentitem__price
             .contentitem__prices
-              = @product.price
+              ¥
+              = @product.price.to_s(:delimited)
             .contentitem__detail
               .contentitem__price--detail
                 (税込) 送料込み
@@ -57,6 +64,10 @@
                     発送日の目安
                   .prodact__Introduction
                     = @product.days_i18n
+          .favorite
+            -if user_signed_in?
+              %ul#favoriteBtn
+                = render partial: 'layouts/favorite', locals: { product: @product}
           .react
             -if user_signed_in? && current_user.id == @product.user_id
               %ul.rightList
@@ -65,11 +76,16 @@
                     編集
                   = link_to "/products/#{@product.id}", method: :delete do
                     削除
+            -elsif @product.soldout == 1
+              %ul.rightList
+                %li.rightList__item--login
+                  完売しました！
             -else
               %ul.rightList
                 %li.rightList__item--login
-                  = link_to "#" do
+                  = link_to purchase_index_path(@product.id) do
                     購入する
+              
         .commentBox
           -if user_signed_in? 
             = form_with(model: [@product, @comment], local: true, id: "new_comment") do |f|
@@ -93,25 +109,5 @@
                     %br
                     .commenttext
                       = comment.text
-        .productList
-          %h2 その他のおすすめの商品
-          = link_to "#" do
-            .productList--img
-              = image_tag 'a007.png'
-            .productList--body
-              %h3.name
-                product3
-              .details
-                %ul
-                  %li
-                    3000円
-                  %li
-                    = icon('fas', 'star', class:'likeIcon')
-                    0
-                %p
-                  (税込) 
-= link_to new_product_path do
-  .purchaseBtn
-    %span.purchaseBtn__text 出品する
-    = image_tag 'icon_camera.png', class:"purchaseBtn__icon" 
+        
 = render partial: "layouts/footer"

@@ -1,14 +1,18 @@
 = render partial: "layouts/header"
+.breadHeader
+  - breadcrumb :mypage
+  = breadcrumbs separator: " &rsaquo; "
 .Wrapper
   .Link
     %h3.Link__page
     %ul.Link__item
       %li.Link__list
-        = link_to "#" do
-          購入した商品
-      %li.Link__list
-        = link_to "#" do
+        = link_to "#", class: "menu_item active" do
           出品した商品
+      %li.Link__list
+        = link_to "#", class: "menu_item" do
+          購入した商品
+        = link_to "お気に入りの商品", product_favorites_path(:product_id)
       %h3.Link__page
         設定
       %ul.Link__item 
@@ -25,8 +29,7 @@
           = link_to destroy_user_session_path,method: :delete do
             ログアウト
         %li.Link__list
-          = link_to "#" do
-            クレジット登録画面
+          = link_to "クレジットカード情報登録・確認・削除", "/card/new"
         %li.Link__list
           = link_to root_path do
             トップページ
@@ -37,19 +40,23 @@
     .Room
       .Room__list
         %h2.Room__item
-          購入した商品
+          出品した商品
         %ul.Room__box
           %li.Room__images
-            写真
+            = image_tag @proImgs.src.url, alt: "NoImage"
           %ul.Room__Show
             %li.Room__date
-              購入日
+              商品名　
+              = @products.name
             %li.Room__date
-              商品名
+              商品の状態　
+              = @products.status_i18n
             %li.Room__date
-              ブランド名
+              カテゴリー　
+              = @products.category.name
             %li.Room__date
-              サイズ
-
+              ブランド　
+              = @products.brand
 
 = render partial: "layouts/footer"
+

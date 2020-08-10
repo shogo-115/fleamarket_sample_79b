@@ -1,0 +1,9 @@
+= render partial: "layouts/header"
+.breadHeader
+  - breadcrumb :hobbies
+  = breadcrumbs separator: " &rsaquo; "
+.newlookMain
+  .newlookHeader
+    おもちゃ・ホビー・グッズ商品の一覧
+  = render partial: "layouts/productbox"
+= render partial: "layouts/footer"

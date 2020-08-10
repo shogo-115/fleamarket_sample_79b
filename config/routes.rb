@@ -18,9 +18,30 @@ Rails.application.routes.draw do
   resources :users, only: :show
   get 'after_logout', to: 'users#logout'
   delete 'user_delete', to: 'users#delete'
+  get 'proDlt', to: 'products#proDlt'
   resources :products do
     resources :comments, only: :create
+    resources :favorites , only: [:index, :create, :destroy]
+  end
+  resources :card, only: [:new, :show] do
+    collection do
+      post 'show', to: 'card#show'
+      post 'pay', to: 'card#pay'
+      post 'delete', to: 'card#delete'
+    end
+  end
+  delete 'deleteData', to: 'card#deleteData'
+  resources :purchase, only: [:index] do
+    collection do
+      get 'index', to: 'purchase#index'
+      post 'pay', to: 'purchase#pay'
+      get 'done', to: 'purchase#done'
+    end
   end
   get 'newlook', to: 'newlooks#index'
   resources :searches, only: :index
+  get 'women', to: 'womens#index'
+  get 'men', to: 'mens#index'
+  get 'camera', to: 'cameras#index'
+  get 'hobby', to: 'hobbies#index'
 end

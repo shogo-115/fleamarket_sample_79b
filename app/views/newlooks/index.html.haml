@@ -1,25 +1,9 @@
 = render partial: "layouts/header"
-
+.breadHeader
+  - breadcrumb :newlooks
+  = breadcrumbs separator: " &rsaquo; "
 .newlookMain
   .newlookHeader
     新着商品の一覧
-  .productBox
-    .productLists
-      .productList
-        - @products.each do |product|
-          = link_to product do
-            .productList--img
-              = image_tag product.images.first.src.url
-            .productList--body
-              %h3.name
-                = product.name
-              .details
-                %ul
-                  %li
-                    = product.price
-                    円
-                    %span (税込)
-                  %li
-                    = icon('fas', 'star', class:'likeIcon')
-                    0
+  = render partial: "layouts/productbox"
 = render partial: "layouts/footer"
