@@ -29,7 +29,7 @@ class PurchaseController < ApplicationController
     :currency => 'jpy'
     )
     product = Product.find_by(id: params[:format])
-    product.update(:soldout => 1)
+    product.update(:soldout => 1, :buyerId => current_user.id)
     redirect_to action: 'done' 
   end
 
