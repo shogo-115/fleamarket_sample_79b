@@ -3,7 +3,7 @@
 }
 
 .cardMain{
-  height: 100vh;
+  height: auto;
   width: 100%;
   background-color: rgb(245, 245, 245);
   .icon{
@@ -130,6 +130,8 @@
     }
     &__delete{
       text-align: center;
+      display: flex;
+      justify-content: space-around;
       button{
         width: 200px;
         height: 50px;
@@ -146,19 +148,167 @@
         background-color:red;
         opacity: 0.7;
       }
-      p{
-        padding-bottom: 30px;
+    }
+  }
+  
+  .cardContents__top{
+    text-align: center;
+    padding-bottom: 20px;
+    a{
+      text-align: center;
+      text-decoration: none;
+      color: black;
+    }
+    a:hover{
+      background-color: whitesmoke;
+      opacity: 0.7;
+    }
+  }
+
+  .cardFooter{
+    text-align: center;
+    .box{
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+      &__privacy{
+        font-size: 14px;
+        a{
+          text-decoration: none;
+          color: black;
+        }
+        a:hover{
+          background-color: whitesmoke;
+          opacity: 0.4;
+        }
       }
-      a{
-        text-decoration: none;
-        color: black;
+      &__terms{
+        font-size: 14px;
+        margin-left: 20px;
+        a{
+          text-decoration: none;
+          color: black;
+        }
+        a:hover{
+          background-color: whitesmoke;
+          opacity: 0.4;
+        }
       }
-      a:hover{
-        background-color: whitesmoke;
+      &__transaction{
+        font-size: 14px;
+        margin-left: 20px;
+        a{
+          text-decoration: none;
+          color: black;
+        }
+        a:hover{
+          background-color: whitesmoke;
+          opacity: 0.4;
+        }
+      }
+    }
+    .icon{
+      padding-top: 30px;
+      img{
+        width: 140px;
+        height: 40.55px;
+        vertical-align: bottom;
+      }
+    }
+    .copyRight{
+      font-size: 12px;
+    }
+  }
+}
+
+.cardEMain{
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(245, 245, 245);
+  .icon{
+    text-align: center;
+    padding: 30px 0;
+    img{
+      width: 140px;
+      height: 40.55px;
+      vertical-align: bottom;
+    }
+  }
+  .cardContents{
+    width: 700px;
+    background-color: white;
+    margin: 0 auto;
+    &__title{
+      font-size: 25px;
+      font-weight: bold;
+      text-align: center;
+      padding: 30px;
+      border-bottom: lightgray solid 1px;
+    }
+    &__number{
+      font-weight: bold;
+      padding: 30px;
+      border-bottom: lightgray solid 1px;
+    }
+    span{
+      font-size: 13px;
+      font-weight: normal;
+      color: white;
+      background-color: red;
+      border-radius: 5px;
+      padding: 3px;
+    }
+    &__deadline{
+      font-weight: bold;
+      padding: 30px;
+      border-bottom: lightgray solid 1px;
+    }
+    span{
+      font-size: 13px;
+      font-weight: normal;
+      color: white;
+      background-color: red;
+      border-radius: 5px;
+      padding: 3px;
+    }
+    
+    &__delete{
+      text-align: center;
+      display: flex;
+      justify-content: space-around;
+      button{
+        width: 200px;
+        height: 50px;
+        color: white;
+        font-size: 17px;
+        font-weight: bold;
+        background-color: red;
+        margin: 30px;
+        padding: 0 24px;
+        border-style: none;
+        border-radius: 10px;
+      }
+      button:hover{
+        background-color:red;
         opacity: 0.7;
       }
     }
   }
+  
+  .cardContents__top{
+    text-align: center;
+    padding-bottom: 20px;
+    a{
+      text-align: center;
+      text-decoration: none;
+      color: black;
+    }
+    a:hover{
+      background-color: whitesmoke;
+      opacity: 0.7;
+    }
+  }
+
   .cardFooter{
     text-align: center;
     .box{

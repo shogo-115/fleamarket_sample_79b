@@ -32,8 +32,7 @@ class ProductsController < ApplicationController
     end
   end
 
-  def show
-  end
+  
 
   def edit
   end
@@ -56,6 +55,7 @@ class ProductsController < ApplicationController
     @producter = @product.user
     @categorie = @product.category
     @proImgs = @product.images
+    @proImge = @proImgs.first
     @comment = Comment.new
     @comments = @product.comments
   end
