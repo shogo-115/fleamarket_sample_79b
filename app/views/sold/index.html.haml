@@ -1,0 +1,9 @@
+= render partial: "layouts/header"
+.breadHeader
+  - breadcrumb :sold
+  = breadcrumbs separator: " &rsaquo; "
+.newlookMain
+  .newlookHeader
+    出品商品の一覧
+  = render partial: "layouts/productbox"
+= render partial: "layouts/footer"

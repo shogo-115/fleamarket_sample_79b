@@ -36,3 +36,13 @@ crumb :hobbies do
   link "おもちゃ・ホビー・グッズ商品の一覧", hobby_path
   parent :root
 end
+
+crumb :sold do
+  link "出品商品の一覧", sold_path
+  parent :mypage
+end
+
+crumb :bought do
+  link "購入商品の一覧", bought_path
+  parent :mypage
+end
