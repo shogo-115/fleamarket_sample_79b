@@ -42,7 +42,7 @@
 }
 
 .MYPAGE{
-  width: 100%;
+  width: calc(100% - 250px);
 }
 .MYpageContents:last-child{
   padding-bottom: 0px;
