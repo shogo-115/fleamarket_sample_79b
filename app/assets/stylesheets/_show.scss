@@ -48,10 +48,11 @@
   padding-bottom: 0px;
 }
 .MYpageContents{
-  padding: 5px 0 5px;
+  padding: 5px 20px 5px;
+  margin-left: 25px;
   background-color: #f8f8f8;
   height: auto;
-  width: 100%;
+  width: calc(100% - 150px);
   float: none;
   margin-bottom: 10px;
   .MYpageHeader{
@@ -179,4 +180,5 @@
 .NOmypage{
   margin-top: 30px;
   font-size: 40px;
+  padding-bottom: 150px;
 }
