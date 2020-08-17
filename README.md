@@ -5,51 +5,39 @@
   不用品販売のフリーマーケットのWEBアプリケーション
 
 # :ledger: Deploy - 本番環境
-  IPアドレス：http://54.150.31.239/
-  ID/Pass
-    ID: 79b
-    Pass: 7979b
-  ＜テスト用アカウント＞
-  ・購入者用
-    メールアドレス: buyer@com
-    パスワード: buy12345 
-   購入用カード情報
-    カード番号： 4242424242424242
-    期限： 12/20
-    セキュリティコード：123
-  ・出品者用
-    メールアドレス名: seller@com
-    パスワード: sell12345
+  IPアドレス：http://54.150.31.239/<br>
+  ID/Pass<br>
+    ID: 79b<br>
+    Pass: 7979b<br>
+  ＜テスト用アカウント＞<br>
+  ・購入者用<br>
+    メールアドレス: buyer@com<br>
+    パスワード: buy12345<br>
+   購入用カード情報<br>
+    カード番号： 4242424242424242<br>
+    期限： 12/20<br>
+    セキュリティコード：123<br>
+  ・出品者用<br>
+    メールアドレス名: seller@com<br>
+    パスワード: sell12345<br>
 
 # :iphone: DEMO -  使用方法
   ## 【トップページ】
-  <div align="center">
-  <img src="https://i.gyazo.com/dd087063fb74365aaa93d6abd95b89cd.jpg" alt="Image from Gyazo" width="80%">
-  </div>
   
   
   ## 【商品出品機能】<br>
-  <div align="center">
-  <img src="https://i.gyazo.com/62e3f1ec441b3e262d07c086decfc1df.jpg" alt="Image from Gyazo" width="80%">
-  </div>
   <div align="right">
   テスト<br>
   </div>
   
   
   ### 【商品購入機能】<br>
-  <div align="center">
-  <img src="https://i.gyazo.com/45e5e0f72625c84cb443ccd3be1db0c5.gif" alt="Image from Gyazo" width="80%">
-  </div>
   <div align="right">
   テスト<br>
   </div>
   
   
   ## 【商品検索機能】<br>
-  <div align="center">
-  <img src="https://i.gyazo.com/b46e300826461175d4b120195de82f44.jpg" alt="Image from Gyazo" width="80%">
-  </div>
   <div align="right">
   テスト<br>
   </div>
