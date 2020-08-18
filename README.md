@@ -24,25 +24,25 @@
     パスワード: sell12345<br>
 
 # :iphone: DEMO -  使用方法
-  ## 【トップページ】
+  ## 【トップページ】<br>
   <div align="center">
   <img src="https://user-images.githubusercontent.com/67040383/90458645-ee8fac00-e139-11ea-9679-9bd6d09e7246.jpg" alt="Image from Gyazo" width="80%">
   </div>
 
-  ## 【商品出品機能】
+  ## 【商品出品機能】<br>
   <div align="center">
   <img src="https://user-images.githubusercontent.com/67040383/90459024-f7cd4880-e13a-11ea-83e3-fb22e9839bb7.gif" alt="Image from Gyazo" width="80%")
   </div>
-  
-  
-  ## 【商品購入機能】
+
+  ## 【商品購入機能】<br>
   <div align="center">
   <img src="https://user-images.githubusercontent.com/67040383/90459524-868e9500-e13c-11ea-8d44-20ee780fa3fe.gif" alt="Image from Gyazo" width="80%")
   </div>
   
   
-  ## 【商品お気に入り機能】
+  ## 【商品お気に入り機能】<br>
   <div align="center">
+  (img src="https://user-images.githubusercontent.com/67040383/90460029-f9e4d680-e13d-11ea-9ca3-4cfebd22950f.gif" alt="Image from Gyazo" width="80%")
   </div>
 
 # 工夫したポイント
