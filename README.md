@@ -26,6 +26,8 @@
 # :iphone: DEMO -  使用方法
   ## 【トップページ】
   <div align="center">
+  (https://user-images.githubusercontent.com/67040383/90458645-ee8fac00-e139-11ea-9679-9bd6d09e7246.jpg)
+
   </div>
   
   
