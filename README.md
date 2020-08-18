@@ -37,10 +37,11 @@
   
   ## 【商品購入機能】
   <div align="center">
+  <img src="https://user-images.githubusercontent.com/67040383/90459524-868e9500-e13c-11ea-8d44-20ee780fa3fe.gif" alt="Image from Gyazo" width="80%")
   </div>
   
   
-  ## 【商品検索機能】
+  ## 【商品お気に入り機能】
   <div align="center">
   </div>
 
