@@ -36,12 +36,12 @@
 
   ## 【商品購入機能】<br>
   <div align="center">
-  <img src="https://user-images.githubusercontent.com/67040383/90459524-868e9500-e13c-11ea-8d44-20ee780fa3fe.gif" alt="Image from Gyazo" width="80%")
+  <img src="https://user-images.githubusercontent.com/67040383/90459524-868e9500-e13c-11ea-8d44-20ee780fa3fe.gif" alt="Image from Gyazo" width="80%">
   </div>
   
   ## 【商品お気に入り機能】<br>
   <div align="center">
-  (img src="https://user-images.githubusercontent.com/67040383/90460029-f9e4d680-e13d-11ea-9ca3-4cfebd22950f.gif" alt="Image from Gyazo" width="80%")
+  <img src="https://user-images.githubusercontent.com/67040383/90460029-f9e4d680-e13d-11ea-9ca3-4cfebd22950f.gif" alt="Image from Gyazo" width="80%">
   </div>
 
 # 工夫したポイント
