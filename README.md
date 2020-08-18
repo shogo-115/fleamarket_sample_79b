@@ -25,6 +25,8 @@
 
 # :iphone: DEMO -  使用方法
   ## 【トップページ】
+  <div align="center">
+  </div>
   
   
   ## 【商品出品機能】<br>
