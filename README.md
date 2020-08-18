@@ -28,23 +28,20 @@
   <div align="center">
   <img src="https://user-images.githubusercontent.com/67040383/90458645-ee8fac00-e139-11ea-9679-9bd6d09e7246.jpg" alt="Image from Gyazo" width="80%">
   </div>
-  
-  
-  ## 【商品出品機能】<br>
-  <div align="right">
-  テスト<br>
+
+  ## 【商品出品機能】
+  <div align="center">
+  <img src="https://user-images.githubusercontent.com/67040383/90459024-f7cd4880-e13a-11ea-83e3-fb22e9839bb7.gif" alt="Image from Gyazo" width="80%")
   </div>
   
   
-  ## 【商品購入機能】<br>
-  <div align="right">
-  テスト<br>
+  ## 【商品購入機能】
+  <div align="center">
   </div>
   
   
-  ## 【商品検索機能】<br>
-  <div align="right">
-  テスト<br>
+  ## 【商品検索機能】
+  <div align="center">
   </div>
 
 # 工夫したポイント
