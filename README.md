@@ -31,7 +31,7 @@
 
   ## 【商品出品機能】<br>
   <div align="center">
-  <img src="https://user-images.githubusercontent.com/67040383/90459024-f7cd4880-e13a-11ea-83e3-fb22e9839bb7.gif" alt="Image from Gyazo" width="80%")
+  <img src="https://user-images.githubusercontent.com/67040383/90459024-f7cd4880-e13a-11ea-83e3-fb22e9839bb7.gif" alt="Image from Gyazo" width="80%">
   </div>
 
   ## 【商品購入機能】<br>
